@@ -1,0 +1,67 @@
+.nav {
+	margin: 14.124px 29.124px;
+}
+
+.navbar ul li a {
+	color: #000;
+}
+
+.navbar ul li a:hover {
+	text-decoration: none;
+}
+
+.middle {
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-40%;
+	margin-top:-15%;
+	width: 80%;
+} 
+
+.blog-middle {
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-40%;
+	margin-top:-1%;
+	width: 80%;	
+}
+
+.doradidae-middle {
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-25%;
+	margin-top:-20%;
+	width: 50%;		
+}
+
+.about-middle {
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-40%;
+	margin-top:-4%;
+	width: 80%;		
+}
+
+.description{
+	margin-top: 50px
+}
+
+#doradidae-logo {
+	text-decoration: none;
+	color: #000;
+}
+
+#doradidae-logo-64 {
+	width: 64px;
+}
+
+img {
+	margin: 20px 10px;
+	max-height: 45%;
+	opacity: 1;
+}
+
