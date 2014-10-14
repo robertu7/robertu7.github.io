@@ -1,67 +1,50 @@
-.nav {
-	margin: 14.124px 29.124px;
+html {
+	/* via @lianghai http://www.zhihu.com/question/19911793/answer/13329819 */
+	font-family: "Helvetica Neue","Palatino","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+	/* via normalize.css */	
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
 }
 
-.navbar ul li a {
-	color: #000;
+body {
+	margin: 0;
+	padding: 0;
 }
 
-.navbar ul li a:hover {
-	text-decoration: none;
+h1 {
+	margin: 0;
 }
 
-.middle {
-	position:absolute;
-	left:50%;
-	top:50%;
-	margin-left:-40%;
-	margin-top:-15%;
-	width: 80%;
-} 
-
-.blog-middle {
-	position:absolute;
-	left:50%;
-	top:50%;
-	margin-left:-40%;
-	margin-top:-1%;
-	width: 80%;	
+h4, h5 {
+	font-weight: 300;
+	margin-top: 0;
 }
 
-.doradidae-middle {
-	position:absolute;
-	left:50%;
-	top:50%;
-	margin-left:-25%;
-	margin-top:-20%;
-	width: 50%;		
+code {
+	padding: 2px;
+	font-family: monospace;
+	font-size: 1em;	
+	border: 1px dotted black;
+	border-radius: 3px;
+	background-color: #eee;
 }
 
-.about-middle {
-	position:absolute;
-	left:50%;
-	top:50%;
-	margin-left:-40%;
-	margin-top:-4%;
-	width: 80%;		
+a, a:active, a:hover, a:visited {
+	text-decoration:none;
+	color: black;
 }
 
-.description{
-	margin-top: 50px
+.center {
+	margin: 0 auto;
+	text-align: center;
 }
 
-#doradidae-logo {
-	text-decoration: none;
-	color: #000;
-}
-
-#doradidae-logo-64 {
+#nav {
+	top: 0px;
 	width: 64px;
+	opacity: 0
 }
 
-img {
-	margin: 20px 10px;
-	max-height: 45%;
-	opacity: 1;
+#banner {
+	margin-top: 9%
 }
-

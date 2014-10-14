@@ -2,31 +2,38 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>RoberMac</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="Description" content="「Chrome 扩展」: 修改任何页面的文本" />    
+	<title>Doradidae</title>
 	<link rel="shortcut icon" href="./img/favicon.ico"/>
-	<link rel="stylesheet" href="./css/kube.min.css">
 	<link rel="stylesheet" href="./css/main.css">
+    <style type="text/css">
+        #banner img {
+            max-width: 20%
+        }
+
+        @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+            #banner img {
+                max-width: 75%
+            }
+
+        }       
+    </style>
 </head>
 <body>
 
-<nav class="navbar nav right">
-    <ul>
-        <li class="active"><a href="">Home</a></li>
-        <li><a href="./doradidae.html">Doradidae</a></li>
-        <li><a href="./blog.html">Blog</a></li>
-        <li><a href="./about.html">About</a></li>
-    </ul>
-</nav>
+    <!-- nav -->
+    <div id="nav" class="center">
+        <svg viewBox="0 0 210 105" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M105,105 C162.989899,105 210,57.9898987 210,0 C210,-57.9898987 162.989899,-105 105,-105 C47.0101013,-105 0,-57.9898987 0,0 C0,57.9898987 47.0101013,105 105,105 Z" fill="#000000"></path></svg>        
+    </div>
 
-<div class="unit-row middle text-centered">
-	<div class="unit-100">
-		<hgroup>
-		    <h2><a id="doradidae-logo" href="./doradidae.html">Doradidae</a></h2>
-		    <h2 class="subheading">eat everthing, change everthing.</h2>
-		</hgroup>
-			<a href="./doradidae.html"><img src="./img/doradidae.png" alt="Steve Jobs" /></a>
-	</div>
-</div>
+    <!-- banner -->
+    <div id="banner" class="center">
+        <a href="./doradidae.html"><h1>Doradidae</h1></a>
+        <a href="./doradidae.html"><h4>eat everthing, change everthing.</h4></a>
+        <a href="./doradidae.html"><img src="./img/doradidae@2x.png" alt="Doradidae Banner" /></a>
+    </div>
+
 
 </body>
 </html>
