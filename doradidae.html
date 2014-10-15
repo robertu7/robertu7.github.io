@@ -45,12 +45,13 @@
 		.function {
 			width: 35%;
 			height: 50%;
-			border: 1px dashed gray;
+			border: 1px solid #505962;
 			border-radius: 5px;
 			padding: 0.8%;
 			margin: 2.6% 1.7% 2.6% 1.7%;
 			display: inline-block;
-			background-color: #FCFAF2
+			background-color: #505962;
+			color: #FCFAF2;
 		}
 
 		#flash:hover {
@@ -59,11 +60,11 @@
 		}
 		@keyframes flash {
 			from {background-color: #FFFFFF}
-			to {background-color: #FCFAF2}
+			to {background-color: #505962}
 		}
 		@-webkit-keyframes flash {
 			from {background-color: #FFFFFF}
-			to {background-color: #FCFAF2}
+			to {background-color: #505962}
 		}		
 		h2:first-child {
 			margin-top: 80px
@@ -102,14 +103,25 @@
 			-webkit-animation : dl_ani 0.7s forwards;
 		}
 		@keyframes dl_ani {
-			from {background-color: #FFFFFF; color: #000;}
-			to {background-color: #CB1B45; color: #FFF;}
+			from {background-color: #FFFFFF;}
+			to {background-color: #CB1B45;}
 		}
 		@-webkit-keyframes dl_ani {
-			from {background-color: #FFFFFF; color: #000;}
-			to {background-color: #CB1B45; color: #FFF;}
+			from {background-color: #FFFFFF;}
+			to {background-color: #CB1B45;}
 		}
-
+		#dl a:hover {
+			animation         : dl_a_ani 0.7s forwards;
+			-webkit-animation : dl_a_ani 0.7s forwards;			
+		}
+		@keyframes dl_a_ani {
+			from {color:#000}
+			to {color: #FFF}
+		}
+		@-webkit-keyframes dl_a_ani {
+			from {color:#000}
+			to {color: #FFF}
+		}
 
 		#demo img {
 			width: 77%;
