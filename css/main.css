@@ -5,46 +5,48 @@ html {
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 }
-
 body {
 	margin: 0;
 	padding: 0;
 }
-
 h1 {
 	margin: 0;
 }
-
-h4, h5 {
+h4 {
 	font-weight: 300;
 	margin-top: 0;
 }
-
+ol {
+    font-weight: 300;
+    font-size: 13px;
+    list-style-position: inside;
+    padding: 0px;
+    margin: 0px;
+}
+li {
+    padding-bottom: 22px;
+}
 code {
 	padding: 2px;
 	font-family: monospace;
-	font-size: 1em;	
+	font-size: 11px;	
 	border: 1px dotted black;
 	border-radius: 3px;
 	background-color: #eee;
 }
-
 a, a:active, a:hover, a:visited {
 	text-decoration:none;
 	color: black;
 }
-
 .center {
 	margin: 0 auto;
 	text-align: center;
 }
-
 .nav {
 	top: 0px;
 	width: 64px;
 	opacity: 0;
 }
-
 .banner {
 	margin-top: 9%;
 }
