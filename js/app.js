@@ -1,6 +1,8 @@
 angular.module('myApp', ['ngRoute'])
 
-.config(['$routeProvider', function($routeProvider) {
+.config(['$routeProvider','$locationProvider', function($routeProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
+
     $routeProvider.
       when('/doradidae', {
         templateUrl: 'template/doradidae.html',
@@ -9,16 +11,18 @@ angular.module('myApp', ['ngRoute'])
       otherwise({
         redirectTo: '/'
       });
+
 }])
 
 .controller('myController', ['$scope', '$location', function($scope, $location){
     //handle [.banner]
-    $scope.$on('$locationChangeSuccess', function (n, o) {
-      console.log(n, o)
+    $scope.$on('$locationChangeSuccess', function() {
       if ($location.path() === '/') {
         $scope.isBanner = false;
+        console.log($location.path())
       } else {
         $scope.isBanner = true;
+        console.log($location.path())        
       }      
     })
 
@@ -28,11 +32,11 @@ angular.module('myApp', ['ngRoute'])
   //handle [.function]
   $scope.contentArray = ['就是', '这么', '屌！'];
   $scope.contentEditable = '修改任何网页的文本内容';
-  $scope.handleContent = function () {
+  $scope.handleContent = function() {
     if ($scope.contentEditable !== '我就是这么屌！') {
       $scope.contentEditable = '我';
     }
-    $interval(function () {
+    $interval(function() {
       if ($scope.contentArray.length !== 0){
         $scope.contentEditable += $scope.contentArray.shift();
       } else {
@@ -40,13 +44,13 @@ angular.module('myApp', ['ngRoute'])
       }
     }, 150, 3)   
   }
-  $scope.handleFlash = function () {
+  $scope.handleFlash = function() {
     document.getElementById('camera_click').play()
   }
 
   //handle [安裝]
   $scope.isChrome = true;
-  $scope.toggleBrowser = function () {
+  $scope.toggleBrowser = function() {
     $scope.isChrome = !$scope.isChrome;
   }
 
