@@ -1,7 +1,7 @@
 angular.module('myApp', ['ngRoute'])
 
 .config(['$routeProvider','$locationProvider', function($routeProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(false).hashPrefix('!');
 
     $routeProvider.
       when('/doradidae', {
@@ -30,11 +30,11 @@ angular.module('myApp', ['ngRoute'])
 
 .controller('doradidaeController', ['$scope', '$interval', function($scope, $interval){
   //handle [.function]
-  $scope.contentArray = ['就是', '这么', '屌！'];
+  $scope.contentArray = ['改', '一切', '。'];
   $scope.contentEditable = '修改任何网页的文本内容';
   $scope.handleContent = function() {
-    if ($scope.contentEditable !== '我就是这么屌！') {
-      $scope.contentEditable = '我';
+    if ($scope.contentEditable !== '修改一切。') {
+      $scope.contentEditable = '修';
     }
     $interval(function() {
       if ($scope.contentArray.length !== 0){
