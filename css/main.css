@@ -1,10 +1,14 @@
 html {
-	/* via @lianghai http://www.zhihu.com/question/19911793/answer/13329819 */
+	/* @lianghai http://www.zhihu.com/question/19911793/answer/13329819 */
 	font-family: "Helvetica Neue","Palatino","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
-	/* via normalize.css */	
+	/* normalize.css */	
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 }
+img {
+  border: 0;
+}
+
 body {
 	margin: 0;
 	padding: 0;
