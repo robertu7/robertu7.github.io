@@ -12,6 +12,7 @@ body {
     padding: 0;
     height: 100%;
     overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 img {
   border: 0;
