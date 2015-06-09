@@ -5,71 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>RoberTu</title>
     <link rel="shortcut icon" href="./img/favicon.ico"/>
-    <style>
-        body {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        ul {
-            list-style: none;
-        }
-        li {
-            display: inline-block;
-            margin-left: 50px;
-        }
-        li > a > img {
-            width: 77px;
-            -webkit-transition: all .5s ease-in-out;
-            transition: all .5s ease-in-out;
-        }
-        #outer {
-            position: absolute;
-            display:table;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-        }
-        #middle {
-            display: table-cell;
-            vertical-align: middle;
-        }
-        #inner {
-            margin: 0 auto;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body>
 
     <div id="outer">
-        <div id="middle">
-            <div id="inner">
-                <ul>
-                    <li>
-                        <a href="https://shenyepoxiao.com" target="_blank">
-                            <img src="./img/Shinya.png" alt="深夜，破曉。">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/RoberMac" target="_blank">
-                            <img src="./img/GitHub.png" alt="GitHub">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://robermac.github.io/Doradidae" target="_blank">
-                            <img src="./img/Doradidae.png" alt="Doradidae">
-                        </a>
-                    </li>
-                </ul>
+        <div id="horizontal"></div>
+        <div id="vertically"></div>
+        <a href="https://shenyepoxiao.com" target="_blank">
+            <div class="product top left faster_animate">
+                <div class="vertically_center">
+                    <img class="project-logo" src="./img/ShinyaApp.png" alt="Project - ShinyaApp">
+                </div>
             </div>
-        </div>
-    </div>  
+        </a>
+        <a href="https://robermac.github.io/PodPicker" target="_blank">
+            <div class="product top right faster_animate">
+                <div class="vertically_center">
+                    <img class="project-logo" src="./img/PodPicker.png" alt="Project - Pod Picker">
+                    <em>A Podcast Timeline Generator</em>
+                </div>
+            </div>
+        </a>
+        <a href="https://robermac.github.io/Doradidae" target="_blank">
+            <div class="product bottom left faster_animate">
+                <div class="vertically_center">
+                    <img class="project-logo" src="./img/Doradidae.png" alt="Project - Doradidae">
+                    <em>eat everything, change everything</em>
+                </div>
+            </div>
+        </a>
+        <a href="https://github.com/RoberMac" target="_blank">
+            <div class="product bottom right faster_animate">
+                <div class="vertically_center">
+                    <img class="project-logo" src="./img/GitHub.png" alt="GitHub">
+                </div>
+            </div>
+        </a>
+    </div>
 
 </body>
 </html>
