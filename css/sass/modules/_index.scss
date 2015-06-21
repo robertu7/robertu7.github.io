@@ -1,0 +1,117 @@
+/* 外部 */
+.outer {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    border: 1px solid #CECECF;
+    border-radius: 7px;
+
+    &__line {
+        &--horizontal {
+            @include line(horizontal);
+        }
+        &--vertically {
+            @include line(vertically);
+        }
+    }
+}
+/* 內部 */
+.inner {
+    position: absolute;
+    display: table;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    cursor: pointer;
+    &--top {
+        top: 0;
+        &.inner--left {
+            &:hover {
+                @include box-shadow(inset -1px -1px 17px 7px rgba(206,206,207,.50));
+            }
+        }
+        &.inner--right {
+            &:hover {
+                @include box-shadow(inset 1px -1px 17px 7px rgba(206,206,207,.50));
+            }
+        }
+    }
+    &--bottom {
+        bottom: -1px;
+        height: calc(50% + 2px);
+        &.inner--left {
+            &:hover {
+                @include box-shadow(inset -1px 1px 17px 7px rgba(206,206,207,.50))
+            }
+        }
+        &.inner--right {
+            &:hover {
+                @include box-shadow(inset 1px 1px 17px 7px rgba(206,206,207,.50));
+            }
+        }
+    }
+    &--left {
+        left: 0;
+    }
+    &--right {
+        right: 0;
+    }
+}
+
+.project {
+    &__logo {
+        display: block;
+        max-width: 128px;
+        max-height: 128px;
+        margin: 0 auto;
+        @media #{$all-mobile-Devices} {
+            max-width: 96px;
+        }
+    }
+    &--ShinyaNews {
+        img {
+            @include border-radius(10px);
+            border: 1px solid #000;
+        }
+        &:hover {
+            img {
+                background-color: #000;
+            }
+        }
+    }
+    &--PodPicker {
+        &:hover {
+            img {
+                @include animation(podpicker_animate 0.7s infinite alternate linear);
+            }
+        }
+    }
+    &--Doradidae {
+        &:hover {
+            img {
+                @include animation(doradidae_animate 0.2s ease infinite alternate);
+            }
+        }
+    }
+}
+
+@include keyframes (podpicker_animate) {
+    0% {
+        @include opacity(1);
+        @include filter(blur(0px));
+    }
+    100% {
+        @include opacity(0);
+        @include filter(blur(2px));
+    }
+}
+@include keyframes(doradidae_animate) {
+    0% {
+        @include transform(rotate(0deg));
+    }
+    100% {
+        @include transform(rotate(5deg));
+    }
+}
