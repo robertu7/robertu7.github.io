@@ -2,43 +2,33 @@ const path = require('path');
 const webpack = require('webpack');
 
 
-var isProduction = process.env.NODE_ENV;
-
-
-console.log(isProduction)
-
 module.exports = {
-    entry: isProduction ? [ './src/entry' ]
-    : [
-        'webpack-dev-server/client?http://localhost:3000',
-        'webpack/hot/only-dev-server',
-        './src/entry'
-    ],
+    entry: {
+        app: ['./src/entry'],
+        vendor: ['react', 'react-dom']
+    },
     output: {
         path: path.join(__dirname, 'build'),
-        filename: 'bundle.js',
-        publicPath: '/build/'
+        filename: 'app.js'
     },
     module: {
         loaders: [
-            {
-                test: /\.jsx?$/,
-                include: path.join(__dirname, 'src'),
-                loaders: ['react-hot', 'babel-loader?presets[]=es2015,presets[]=react']
-            },
-            { test: /\.css$/,  loader: "style-loader!css-loader!postcss-loader" }
+            { test: /\.jsx?$/, loaders: ['babel-loader?presets[]=es2015,presets[]=react'] },
+            { test: /\.json$/, loader: "json-loader" },
+            { test: /\.css$/,  loader: "style-loader!css-loader!postcss-loader" },
+            { test: /\.svg$/,  loader: "babel-loader?presets=react!svg-react-loader" },
         ]
     },
     resolve: {
         extensions: ['', '.js', '.json', '.coffee'] 
     },
-    plugins: isProduction ? [ new webpack.optimize.UglifyJsPlugin() ]
-    : [
-        new webpack.optimize.CommonsChunkPlugin('common.js'),
-        new webpack.HotModuleReplacementPlugin()
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
+        new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
     ],
-    postcss: function (){
+    postcss: function (webpack){
         return [
+            require('postcss-import')({ addDependencyTo: webpack }),
             require('postcss-nested'),
             require('postcss-short'),
             require('postcss-cssnext')({

@@ -1,10 +1,11 @@
 import React from 'react';
-import Works from './components/Works.js';
+import Works from './components/Works';
+
 
 export default class App extends React.Component {
-	render() {
-		return (
-		 	<Works />
-		)
-	}
+    render() {
+	    return (
+	    	<Works />
+	    )
+    }
 }

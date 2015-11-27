@@ -1,0 +1,46 @@
+.work {
+    position: relative;
+    size: 100% 77vh;
+    margin-bottom: 3px;
+    background-color: var(--color-gray);
+
+    &:last-child {
+        margin: 0px;
+    }
+
+    &__banner {
+        position: absolute 11.5% 11.5% * *;
+        size: 77%;
+        text-align: center;
+
+        &__logo {
+            height: 17vh;
+            max-height: 128px;
+
+            &--Oneline {
+
+            }
+            &--ShinyaApp-News {
+                border: 1px solid #000;
+                border-radius: 7px;
+                background-color: var(--color-gray);
+                &:hover {
+                    background-color: #000;
+                }
+            }
+            &--PodPicker {
+                &:hover {
+                    animation: podpicker_animate 0.7s infinite alternate linear;
+                }
+            }
+            &--ShinyaApp {
+
+            }
+            &--Doradidae {
+                &:hover {
+                    animation: doradidae_animate 0.2s ease infinite alternate;
+                }
+            }
+        }
+    }
+}
