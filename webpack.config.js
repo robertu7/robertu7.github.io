@@ -15,8 +15,7 @@ module.exports = {
         loaders: [
             { test: /\.jsx?$/, loaders: ['babel-loader?presets[]=es2015,presets[]=react'] },
             { test: /\.json$/, loader: "json-loader" },
-            { test: /\.css$/,  loader: "style-loader!css-loader!postcss-loader" },
-            { test: /\.svg$/,  loader: "babel-loader?presets=react!svg-react-loader" },
+            { test: /\.css$/,  loader: "style-loader!css-loader!postcss-loader" }
         ]
     },
     resolve: {

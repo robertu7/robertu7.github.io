@@ -5,7 +5,45 @@
         "createdAt": 1439740800000,
         "description": "Twitter & Instagram & Weibo ➠ Oneline",
         "website": "https://one---line.com",
-        "repository": "https://github.com/RoberMac/Oneline"
+        "repository": "https://github.com/RoberMac/Oneline",
+        "screenshot": [
+            {
+                "description": "授權介面",
+                "id": "screenshot_0"
+            },
+            {
+                "description": "時間線",
+                "id": "screenshot_1"
+            },
+            {
+                "description": "用戶信息",
+                "id": "screenshot_2"
+            },
+            {
+                "description": "#標籤",
+                "id": "screenshot_3"
+            },
+            {
+                "description": "地理位置（微博）",
+                "id": "screenshot_4"
+            },
+            {
+                "description": "地理位置（Instagram）",
+                "id": "screenshot_5"
+            },
+            {
+                "description": "轉推",
+                "id": "screenshot_6"
+            },
+            {
+                "description": "寫推",
+                "id": "screenshot_7"
+            },
+            {
+                "description": "私信",
+                "id": "screenshot_8"
+            }
+        ]
     },
     {
         "name": "新聞，舊聞。",
@@ -13,7 +51,29 @@
         "createdAt": 1434124800000,
         "description": "新聞，舊聞。",
         "website": "http://news.shenyepoxiao.com",
-        "repository": "https://github.com/RoberMac/ShinyaApp-News"
+        "repository": "https://github.com/RoberMac/ShinyaApp-News",
+        "screenshot": [
+            {
+                "description": "「新聞」",
+                "id": "screenshot_0"
+            },
+            {
+                "description": "「舊聞。」",
+                "id": "screenshot_1"
+            },
+            {
+                "description": "時光機",
+                "id": "screenshot_2"
+            },
+            {
+                "description": "搜尋",
+                "id": "screenshot_3"
+            },
+            {
+                "description": "RWD",
+                "id": "screenshot_4"
+            }
+        ]
     },
     {
         "name": "Pod Picker",
@@ -21,7 +81,41 @@
         "createdAt": 1432310400000,
         "description": "A Podcast Timeline Generator",
         "website": "https://robermac.github.io/PodPicker/",
-        "repository": "https://github.com/RoberMac/PodPicker"
+        "repository": "https://github.com/RoberMac/PodPicker",
+        "screenshot": [
+            {
+                "description": "FIRST CONTANT",
+                "id": "screenshot_0"
+            },
+            {
+                "description": "THE PICKER'S GUIDE",
+                "id": "screenshot_1"
+            },
+            {
+                "description": "POSTPICKER - 編輯",
+                "id": "screenshot_2"
+            },
+            {
+                "description": "POSTPICKER - 預覽",
+                "id": "screenshot_3"
+            },
+            {
+                "description": "POSTPICKER - 修改",
+                "id": "screenshot_4"
+            },
+            {
+                "description": "POSTPICKER - 清空",
+                "id": "screenshot_5"
+            },
+            {
+                "description": "POSTPICKER - 刪除",
+                "id": "screenshot_6"
+            },
+            {
+                "description": "POSTPICKER - 導出",
+                "id": "screenshot_7"
+            }
+        ]
     },
     {
         "name": "深夜，破曉。",
@@ -29,7 +123,49 @@
         "createdAt": 1426348800000,
         "description": "深夜，破曉。",
         "website": "https://shenyepoxiao.com",
-        "repository": "https://github.com/RoberMac/ShinyaApp"
+        "repository": "https://github.com/RoberMac/ShinyaApp",
+        "screenshot": [
+            {
+                "description": "登入",
+                "id": "screenshot_0"
+            },
+            {
+                "description": "尋找帳戶",
+                "id": "screenshot_1"
+            },
+            {
+                "description": "提及",
+                "id": "screenshot_2"
+            },
+            {
+                "description": "查看圖片",
+                "id": "screenshot_3"
+            },
+            {
+                "description": "查看圖片",
+                "id": "screenshot_4"
+            },
+            {
+                "description": "用戶信息",
+                "id": "screenshot_5"
+            },
+            {
+                "description": "天氣",
+                "id": "screenshot_6"
+            },
+            {
+                "description": "新聞",
+                "id": "screenshot_7"
+            },
+            {
+                "description": "設置",
+                "id": "screenshot_8"
+            },
+            {
+                "description": "RWD",
+                "id": "screenshot_9"
+            }
+        ]
     },
     {
         "name": "Doradidae",
@@ -37,6 +173,24 @@
         "createdAt": 1404403200000,
         "description": "修改任何页面的文本",
         "website": "http://robermac.github.io/Doradidae",
-        "repository": "https://github.com/RoberMac/Doradidae"
+        "repository": "https://github.com/RoberMac/Doradidae",
+        "screenshot": [
+            {
+                "description": "主頁一",
+                "id": "screenshot_0"
+            },
+            {
+                "description": "主頁二",
+                "id": "screenshot_1"
+            },
+            {
+                "description": "演示 - 支付寶",
+                "id": "screenshot_2"
+            },
+            {
+                "description": "演示 - Apple",
+                "id": "screenshot_3"
+            }
+        ]
     }
 ]

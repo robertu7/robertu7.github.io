@@ -17,6 +17,10 @@
     --color-gray: #F1F1F1;
     --color-gray-drak: #CECECF;
     --color-steel: #666;
+
+    --color-twitter: #2AA9E0;
+    --color-instagram: #3F5D87;
+    --color-weibo: #E6162D;
 }
 
 @custom-media --all-mobile-devices (device-width <= 1024px), (width <= 1024px);

@@ -1,32 +1,23 @@
 import React from 'react';
-import Segment from 'segment-js';
-
 
 export default class Banner extends React.Component {
     render() {
-        let Icon = require('../img/' + this.props.screen_name + '.svg');
+        let IconSrc = '/src/img/icon-sprites.svg#' + this.props.screen_name;
         let IconClass= 'animate--faster work__banner__logo ' + 'work__banner__logo--' + this.props.screen_name;
 
         return (
-            <div className="work__banner vertically_center">
-                <div>
+            <div className="work__banner vertically_centers">
                     <button
-                        type="button"
-                        onMouseEnter={this.handleMouseEnter.bind(this)}
+                        className={IconClass}
                         onClick={this.handleClick.bind(this)}
+                        type="button"
                     >
-                        <Icon className={IconClass}/>
+                        <svg viewBox="0 0 100 100" className="animate--faster">
+                            <use xlinkHref={IconSrc}></use>
+                        </svg>
                     </button>
-                </div>
             </div>
         );
-    }
-    handleMouseEnter (){
-        let paths = document.querySelectorAll('.work__banner__logo--' + this.props.screen_name + ' path');
-
-        [].forEach.call(paths, function (path){
-            new Segment(path).draw('0', '100%', 1);
-        })
     }
     handleClick (){
         console.log(this.props.screen_name, 'clicked!')
