@@ -4,20 +4,25 @@
     margin-bottom: 3px;
     background-color: var(--color-gray);
 
-    &:last-child {
-        margin: 0px;
+    &--next {
+        position: relative;
+        size: 100% 23vh;
+        background-color: var(--color-gray);
     }
+
 
     &__banner {
         position: absolute 0 0 * *;
         size: 100%;
         text-align: center;
 
-        &__logo {
-            size: 100%;
+        &--active {
+            height: 17%;
+        }
 
+        &__logo {
             svg {
-                height: 17vh;
+                height: 10vh;
             }
 
             &--Oneline {
@@ -25,7 +30,7 @@
                     fill: var(--color-black);
                 }
                 &:hover svg {
-                    transform: scaleY(3);
+                    transform: scaleY(1.5);
                 }
             }
             &--ShinyaApp-News {
@@ -51,6 +56,18 @@
                     animation: doradidae_animate 0.2s ease infinite alternate;
                 }
             }
+        }
+    }
+
+    &__demo {
+        position: absolute * * 7px *;
+        size: 100% 64%;
+        white-space: nowrap;
+
+        img {
+            height: 100%;
+            margin: 0 7px;
+            cursor: pointer;
         }
     }
 }

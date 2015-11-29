@@ -108,19 +108,19 @@ img, video {
 }
 .animate {
     &--slower {
-        transition: all 1.7s ease-in-out;
+        transition: all 1.7s cubic-bezier(0.22, 0.61, 0.36, 1);;
     }
     &--general {
-        transition: all .7s ease-in-out;
+        transition: all .7s cubic-bezier(0.22, 0.61, 0.36, 1);;
     }
     &--faster {
-        transition: all .3s ease-in-out;
+        transition: all .3s cubic-bezier(0.22, 0.61, 0.36, 1);;
     }
     &--general, &--faster {
-        &.ng-enter, &.ng-leave.ng-leave-active {
+        &.react-enter, &.react-leave.react-leave-active {
             opacity: 0;
         }
-        &.ng-leave, &.ng-enter.ng-enter-active {
+        &.react-leave, &.react-enter.react-enter-active {
             opacity: 1;
         }
     }
@@ -135,47 +135,5 @@ img, video {
         overflow-x: hidden;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
-    }
-}
-.tips {
-    opacity: .7;
-
-    &:hover {
-        opacity: 1;
-    }
-
-    &--deep {
-        opacity: .3;
-
-        &:hover {
-            opacity: 1;
-        }
-        &--peace {
-            opacity: .3;
-        }
-    }
-    &--active {
-        opacity: 1;
-
-        &:hover {
-            opacity: .7;
-        }
-        &--peace {
-            opacity: 1;
-        }
-    }
-    &--frozen {
-        opacity: .3!important;
-        cursor: default;
-
-        &:hover {
-            opacity: .3!important;
-        }
-    }
-    &--inprocess {
-        animation: inprocessAnimate 1.7s infinite cubic-bezier(0.4, 0, 1, 1);
-    }
-    &--error {
-        animation: tipsErrAnimate .5s ease-in-out;
     }
 }
