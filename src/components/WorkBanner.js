@@ -1,23 +1,49 @@
 import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
+let Description = props => (
+    <div className="work__banner__description animate--general">
+        <p>{props.description}</p>
+        <a href={props.website} target="_blank">
+            <span className="work__banner__link-btn work__banner__link-btn--red"></span>
+        </a>
+        <a href={props.repository} target="_blank">
+            <span className="work__banner__link-btn work__banner__link-btn--blue"></span>
+        </a>
+    </div>
+);
 
 export default class WorkBanner extends React.Component {
     render (){
         let screen_name = this.props.screen_name;
-        let BannerClass = 'work__banner vertically_center animate--general ' + (this.props.isActive ? '' : 'work__banner--active');
-        let IconSrc = '/src/img/icon-sprites.svg#' + screen_name;
-        let IconClass= 'animate--general work__banner__logo ' + 'work__banner__logo--' + screen_name;
+        let bannerState = this.props.isBannerActive ? 'work__banner--active' : '';
+        let BannerClass = `work__banner ${bannerState} vertically_center animate--general`;
+        let IconClass= `work__banner__logo work__banner__logo--${screen_name} animate--general`;
+        let IconSrc = `/src/img/icon-sprites.svg#${screen_name}`;
 
         return (
             <div className={BannerClass}>
-                <div>
-                    <button className={IconClass} onClick={this.props.toggleActive} type="button">
-                        <svg viewBox="0 0 100 100" className="animate--general">
-                            <use xlinkHref={IconSrc}></use>
-                        </svg>
-                    </button>
-                </div>
+                <button className={IconClass} onClick={this.props.toggleActive} type="button">
+                    <svg viewBox="0 0 100 100" className="animate--general">
+                        <use xlinkHref={IconSrc}></use>
+                    </svg>
+                </button>
+                <ReactCSSTransitionGroup
+                    transitionName="react"
+                    transitionEnterTimeout={700}
+                    transitionLeaveTimeout={700}
+                >
+                    {this.props.isDemoActive
+                        ? <Description {...this.props} />
+                    : null}
+                </ReactCSSTransitionGroup>
             </div>
         );
     }
+}
+
+WorkBanner.propTypes = {
+    screen_name: React.PropTypes.string.isRequired,
+    isDemoActive: React.PropTypes.bool.isRequired,
+    toggleActive: React.PropTypes.func.isRequired
 }

@@ -99,12 +99,9 @@ img, video {
     outline: none;
 }
 .vertically_center {
-    align-items: center;
     display: flex;
-
-    > * {
-        width: 100%;
-    }
+    justify-content: center;
+    align-items: center;
 }
 .animate {
     &--slower {
