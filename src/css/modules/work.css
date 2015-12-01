@@ -4,13 +4,6 @@
     margin-bottom: 3px;
     background-color: var(--color-gray);
 
-    &--next {
-        position: relative;
-        size: 100% 23vh;
-        background-color: var(--color-gray);
-    }
-
-
     &__banner {
         position: absolute 0 0 * *;
         size: 100%;
@@ -45,7 +38,7 @@
             }
             &--PodPicker {
                 &:hover svg {
-                    animation: podpicker_animate 0.7s infinite alternate linear;
+                    animation: podpicker 0.7s infinite alternate linear;
                 }
             }
             &--ShinyaApp {
@@ -53,7 +46,7 @@
             }
             &--Doradidae {
                 &:hover svg {
-                    animation: doradidae_animate 0.2s ease infinite alternate;
+                    animation: doradidae 0.2s ease infinite alternate;
                 }
             }
         }
@@ -61,7 +54,7 @@
             position: absolute calc(31.5vh) * * 0;
             width: 100%;
             font-size: var(--font-size-base);
-            font-weight: lighter;
+            font-weight: var(--font-weight-lighter);
         }
         &__link-btn {
             display: inline-block;
@@ -105,7 +98,6 @@
         &--zoom {
             position: absolute 0 0 * *;
             size: 100%;
-            text-align: center;
             background-color: var(--color-black-alpha);
             cursor: zoom-out;
 
@@ -118,11 +110,62 @@
                 position: absolute * 7px 1.5% *;
                 padding: 3px;
                 font-size: var(--font-size-small);
-                font-weight: lighter;
+                font-weight: var(--font-weight-lighter);
                 color: var(--color-black);
                 background-color: var(--color-gray-drak);
                 border-radius: 3px;
             }
+        }
+    }
+}
+
+.footer {
+    position: relative;
+    size: 100% 23vh;
+    background-color: var(--color-gray);
+
+    &__link {
+        display: inline-block;
+        margin: 0 7px;
+        font-size: var(--font-size-base);
+        font-weight: var(--font-weight-regular);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border-bottom: 1px solid #000;
+        user-select: none;
+    }
+}
+
+.media {
+    position: absolute 0 0 * *;
+    size: 100%;
+}
+
+.spinner {
+    position: absolute calc(50% - 20px) calc(50% - 20px) * *;
+    size: 40px;
+    margin: 0 auto;
+    border: 1px solid #FFF;
+    border-radius: 20px;
+    transition: all 7.7s ease-in-out;
+    animation: spinnerLoading 1.7s infinite linear;
+
+    &:before {
+        content: '';
+        position: absolute 0 * * 0;
+        size: 10px;
+        border-radius: 5px;
+        transition: all 7.7s ease-in-out;
+        background-color: var(--color-gray);
+    }
+
+    &--loaded {
+        display: none;
+    }
+    &--loadFail {
+        border-color: var(--color-weibo);
+        &:before {
+            top: -999px;
         }
     }
 }

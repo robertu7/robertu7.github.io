@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+
 import worksData from '../data/works.json';
 import WorkBanner from './WorkBanner';
 import { WorkDemo, WorkDemoZoom } from './WorkDemo';
+import { ToggleText } from './Utils';
 
 
 class Work extends React.Component {
@@ -57,13 +59,26 @@ class Work extends React.Component {
         }, demoTimeout)
     }
     toggleDemoZoom (src, description){
-        console.log(description)
         this.setState({ demoZoomSrc: src , demoZoomDescription: description })
     }
 }
 Work.propTypes = {
     workData: React.PropTypes.object.isRequired
 }
+
+let Footer = props => (
+    <div className="footer vertically_center">
+        <span className="footer__link">
+            <a href="mailto:robertu0717@gmail.com" target="_blank">EMAIL</a>
+        </span>
+        <span className="footer__link">
+            <a href="https://github.com/RoberMac" target="_blank">GitHub</a>
+        </span>
+        <span className="footer__link">
+            <ToggleText text={ ['Wechat', 'RoberMac'] }/>
+        </span>
+    </div>
+);
 
 
 export default class Works extends React.Component {
@@ -79,7 +94,7 @@ export default class Works extends React.Component {
         return (
             <div>
                 {works}
-                <div className="work--next"></div>
+                <Footer />
             </div>
         );
     }

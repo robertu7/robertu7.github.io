@@ -5,8 +5,8 @@ const rename     = require('gulp-rename');
 
 
 // SVG: Minify & Combine
-let svgmin   = require('gulp-svgmin');
-let svgstore = require('gulp-svgstore');
+const svgmin   = require('gulp-svgmin');
+const svgstore = require('gulp-svgstore');
 
 gulp.task('svgstore', () => {
     return gulp.src('src/img/svg/*.svg')
@@ -26,5 +26,17 @@ gulp.task('svgstore', () => {
     .pipe(gulp.dest('src/img'))
 })
 
+// Thumbnail
+const imageResize = require('gulp-image-resize');
+const imagemin = require('gulp-imagemin');
+
+gulp.task('thumbnail', () => {
+  gulp.src('src/img/screenshots/large/*.{jpg,png}')
+    .pipe(imageResize({ height: 512 }))
+    .pipe(imagemin({ progressive: true }))
+    .pipe(gulp.dest('src/img/screenshots/thumb'));
+})
+
+
 // Run
-gulp.task('default', ['svgstore']);
+gulp.task('default', ['svgstore', 'thumbnail']);

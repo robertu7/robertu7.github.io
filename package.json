@@ -1,6 +1,6 @@
 {
   "name": "robermac.github.io",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -27,6 +27,8 @@
     "css-mqpacker": "^4.0.0",
     "file-loader": "^0.8.5",
     "gulp": "^3.9.0",
+    "gulp-image-resize": "^0.7.1",
+    "gulp-imagemin": "^2.4.0",
     "gulp-rename": "^1.2.2",
     "gulp-svgmin": "^1.2.0",
     "gulp-svgstore": "^5.0.5",

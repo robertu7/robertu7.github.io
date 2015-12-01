@@ -12,6 +12,11 @@ let Description = props => (
         </a>
     </div>
 );
+Description.propTypes = {
+    description: React.PropTypes.string.isRequired,
+    website: React.PropTypes.string.isRequired,
+    repository: React.PropTypes.string.isRequired
+}
 
 export default class WorkBanner extends React.Component {
     render (){
@@ -41,9 +46,9 @@ export default class WorkBanner extends React.Component {
         );
     }
 }
-
 WorkBanner.propTypes = {
     screen_name: React.PropTypes.string.isRequired,
+    isBannerActive: React.PropTypes.bool.isRequired,
     isDemoActive: React.PropTypes.bool.isRequired,
     toggleActive: React.PropTypes.func.isRequired
 }

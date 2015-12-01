@@ -1,4 +1,4 @@
-@keyframes podpicker_animate {
+@keyframes podpicker {
     0% {
         opacity: 1;
         filter: blur(0px);
@@ -8,11 +8,20 @@
         filter: blur(2px);
     }
 }
-@keyframes doradidae_animate {
+@keyframes doradidae {
     0% {
         transform: rotate(0deg);
     }
     100% {
         transform: rotate(5deg);
+    }
+}
+
+@keyframes spinnerLoading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
