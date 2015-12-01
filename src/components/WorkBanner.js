@@ -5,10 +5,10 @@ let Description = props => (
     <div className="work__banner__description animate--general">
         <p>{props.description}</p>
         <a href={props.website} target="_blank">
-            <span className="work__banner__link-btn work__banner__link-btn--red"></span>
+            <span className="work__banner__link-btn work__banner__link-btn--red animate--faster"></span>
         </a>
         <a href={props.repository} target="_blank">
-            <span className="work__banner__link-btn work__banner__link-btn--blue"></span>
+            <span className="work__banner__link-btn work__banner__link-btn--blue animate--faster"></span>
         </a>
     </div>
 );

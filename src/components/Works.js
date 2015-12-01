@@ -31,14 +31,16 @@ class Work extends React.Component {
                             key={'WorkDemo'}
                             screenshots={work.screenshots}
                             zoomIn={this.toggleDemoZoom.bind(this)}
-                        />}
+                        />
+                    }
                     {this.state.demoZoomSrc &&
                         <WorkDemoZoom
                             key={this.state.demoZoomSrc}
                             src={this.state.demoZoomSrc}
                             description={this.state.demoZoomDescription}
                             zoomOut={this.toggleDemoZoom.bind(this, '', '')}
-                        />}
+                        />
+                    }
                 </ReactCSSTransitionGroup>
             </div>
         );
