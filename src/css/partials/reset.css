@@ -134,3 +134,7 @@ img, video {
         -webkit-overflow-scrolling: touch;
     }
 }
+.text_uppercase {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}

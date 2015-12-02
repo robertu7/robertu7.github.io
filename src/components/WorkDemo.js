@@ -27,15 +27,15 @@ WorkDemo.propTypes = {
 }
 
 
-export let WorkDemoZoom = props => (
-    <div
-        className="work__demo--zoom animate--general"
-        onClick={props.zoomOut}
-    >
-        <Media type="image" src={props.src} />
-        <span className="work__demo--zoom__description">{props.description}</span>
-    </div>
-);
+export let WorkDemoZoom = props => {
+    let descriptionClass = 'work__demo--zoom__description ' + (props.src.indexOf('PodPicker') >= 0 ? 'text_uppercase' : '');
+    return (
+        <div className="work__demo--zoom animate--general" onClick={props.zoomOut}>
+            <Media type="image" src={props.src} />
+            <span className={descriptionClass}>{props.description}</span>
+        </div>
+    );
+};
 WorkDemoZoom.propTypes = {
     zoomOut: React.PropTypes.func.isRequired,
     src: React.PropTypes.string.isRequired,
