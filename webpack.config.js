@@ -5,7 +5,11 @@ const webpack = require('webpack');
 module.exports = {
     entry: {
         app: ['./src/entry'],
-        vendor: ['react', 'react-dom']
+        vendor: [
+            'react',
+            'react-dom',
+            'react-addons-css-transition-group',
+        ]
     },
     output: {
         path: path.join(__dirname, 'build'),

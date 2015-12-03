@@ -2,7 +2,7 @@ import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import worksData from '../data/works.json';
-import WorkBanner from './WorkBanner';
+import { WorkBanner } from './WorkBanner';
 import { WorkDemo, WorkDemoZoom } from './WorkDemo';
 import { ToggleText } from './Utils';
 
@@ -47,7 +47,7 @@ class Work extends React.Component {
             </div>
         );
     }
-    toggleActive (){
+    toggleActive (hash){
         let [bannerTimeout, demoTimeout] = this.state.isDemoActive ? [700, 0] : [0, 700];
 
         setTimeout(() =>{
@@ -57,6 +57,13 @@ class Work extends React.Component {
         setTimeout(() =>{
             this.setState({ isDemoActive: !this.state.isDemoActive })
         }, demoTimeout)
+
+        // Update URL
+        // via http://lea.verou.me/2011/05/change-url-hash-without-page-jump/#comment-990138307
+        let elem = document.getElementById(hash);
+        elem.removeAttribute('id');
+        window.location.hash = hash;
+        elem.setAttribute('id', hash);
     }
     toggleDemoZoom (src, description){
         this.setState({ demoZoomSrc: src , demoZoomDescription: description })
@@ -81,21 +88,19 @@ let Footer = props => (
 );
 
 
-export default class Works extends React.Component {
-    render (){
-        let works = worksData.map(work => {
-            return (
-                <div className="work" key={work.info.screen_name}>
-                    <Work workData={work}/>
-                </div>
-            );
-        });
-
+export let Works = props => {
+    let works = worksData.map(work => {
         return (
-            <div>
-                {works}
-                <Footer />
+            <div className="work" key={work.info.screen_name} id={work.info.screen_name}>
+                <Work workData={work}/>
             </div>
         );
-    }
-}
+    });
+
+    return (
+        <div>
+            {works}
+            <Footer />
+        </div>
+    );
+};

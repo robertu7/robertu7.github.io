@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+
+import { Works } from './components/Works';
 import './css/main.css';
 
 
-ReactDOM.render(<App />, document.querySelector('.app'));
+ReactDOM.render(<Works />, document.querySelector('.app'));
