@@ -30,8 +30,4 @@ export default class Media extends React.Component {
     setLoadState (state){
         this.setState({ loadState: state })
     }
-}
-Media.propTypes = {
-    type: React.PropTypes.oneOf(['image', 'video']),
-    src : React.PropTypes.string.isRequired
-}
+};

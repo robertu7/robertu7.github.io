@@ -1,6 +1,6 @@
 {
   "name": "robermac.github.io",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -48,6 +48,7 @@
     "history": "^1.13.1",
     "react": "^0.14.3",
     "react-addons-css-transition-group": "^0.14.3",
+    "react-addons-update": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "^4.0.0",
     "react-router": "^1.0.0",

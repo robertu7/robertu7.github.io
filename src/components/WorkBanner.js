@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 let Description = props => (
@@ -12,23 +12,18 @@ let Description = props => (
         </a>
     </div>
 );
-Description.propTypes = {
-    description: React.PropTypes.string.isRequired,
-    website: React.PropTypes.string.isRequired,
-    repository: React.PropTypes.string.isRequired
-}
 
 
 export let WorkBanner = props => {
-    let screen_name = props.screen_name;
+    let id = props.workId;
     let bannerState = props.isBannerActive ? 'work__banner--active' : '';
     let BannerClass = `work__banner ${bannerState} vertically_center animate--general`;
-    let IconClass= `work__banner__logo work__banner__logo--${screen_name} animate--general`;
-    let IconSrc = `/src/img/icon-sprites.svg#${screen_name}`;
+    let IconClass= `work__banner__logo work__banner__logo--${id} animate--general`;
+    let IconSrc = `/src/img/icon-sprites.svg#${id}`;
 
     return (
         <div className={BannerClass}>
-            <button className={IconClass} onClick={props.toggleActive.bind(null, screen_name)} type="button">
+            <button className={IconClass} onClick={props.onToggleActive} type="button">
                 <svg viewBox="0 0 100 100" className="animate--general">
                     <use xlinkHref={IconSrc}></use>
                 </svg>
@@ -39,15 +34,13 @@ export let WorkBanner = props => {
                 transitionLeaveTimeout={700}
             >
                 {props.isDemoActive
-                    ? <Description {...props} />
+                    ? <Description
+                        description={props.description}
+                        website={props.website}
+                        repository={props.repository}
+                    />
                 : null}
             </ReactCSSTransitionGroup>
         </div>
     );
 };
-WorkBanner.propTypes = {
-    screen_name: React.PropTypes.string.isRequired,
-    isBannerActive: React.PropTypes.bool.isRequired,
-    isDemoActive: React.PropTypes.bool.isRequired,
-    toggleActive: React.PropTypes.func.isRequired
-}

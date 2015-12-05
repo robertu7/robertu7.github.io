@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 
-
 module.exports = {
     entry: {
         app: ['./src/entry'],
@@ -9,6 +8,11 @@ module.exports = {
             'react',
             'react-dom',
             'react-addons-css-transition-group',
+            'react-addons-update',
+            'react-redux',
+            'redux',
+            'react-router',
+            'history',
         ]
     },
     output: {
@@ -17,7 +21,11 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.jsx?$/, loaders: ['babel-loader?presets[]=es2015,presets[]=react'] },
+            {
+                test: /\.jsx?$/,
+                include: path.resolve(__dirname, 'src'),
+                loaders: ['babel-loader?presets[]=es2015,presets[]=react']
+            },
             { test: /\.json$/, loader: "json-loader" },
             { test: /\.css$/,  loader: "style-loader!css-loader!postcss-loader" }
         ]

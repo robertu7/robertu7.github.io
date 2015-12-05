@@ -1,106 +1,64 @@
-import React from 'react';
+import React from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
-import worksData from '../data/works.json';
-import { WorkBanner } from './WorkBanner';
-import { WorkDemo, WorkDemoZoom } from './WorkDemo';
-import { ToggleText } from './Utils';
+import { WorkBanner } from './WorkBanner'
+import { WorkDemo, WorkDemoZoom } from './WorkDemo'
 
 
-class Work extends React.Component {
-    constructor (props){
-        super(props)
-        this.state = { isBannerActive: false, isDemoActive: false, demoZoomSrc: '', demoZoomDescription: '' }
-    }
-    render (){
-        let work = this.props.workData;
-
-        return (
-            <div>
-                <WorkBanner
-                    isBannerActive ={this.state.isBannerActive}
-                    isDemoActive={this.state.isDemoActive}
-                    toggleActive={this.toggleActive.bind(this)}
-                    {...work.info}
-                />
-                <ReactCSSTransitionGroup
-                    transitionName="react"
-                    transitionEnterTimeout={700}
-                    transitionLeaveTimeout={700}
-                >
-                    {this.state.isDemoActive && 
-                        <WorkDemo
-                            key={'WorkDemo'}
-                            screenshots={work.screenshots}
-                            zoomIn={this.toggleDemoZoom.bind(this)}
-                        />
-                    }
-                    {this.state.demoZoomSrc &&
-                        <WorkDemoZoom
-                            key={this.state.demoZoomSrc}
-                            src={this.state.demoZoomSrc}
-                            description={this.state.demoZoomDescription}
-                            zoomOut={this.toggleDemoZoom.bind(this, '', '')}
-                        />
-                    }
-                </ReactCSSTransitionGroup>
-            </div>
-        );
-    }
-    toggleActive (hash){
-        let [bannerTimeout, demoTimeout] = this.state.isDemoActive ? [700, 0] : [0, 700];
-
-        setTimeout(() =>{
-            this.setState({ isBannerActive: !this.state.isBannerActive })
-        }, bannerTimeout)
-
-        setTimeout(() =>{
-            this.setState({ isDemoActive: !this.state.isDemoActive })
-        }, demoTimeout)
-
-        // Update URL
-        // via http://lea.verou.me/2011/05/change-url-hash-without-page-jump/#comment-990138307
-        let elem = document.getElementById(hash);
-        elem.removeAttribute('id');
-        window.location.hash = hash;
-        elem.setAttribute('id', hash);
-    }
-    toggleDemoZoom (src, description){
-        this.setState({ demoZoomSrc: src , demoZoomDescription: description })
-    }
-}
-Work.propTypes = {
-    workData: React.PropTypes.object.isRequired
-}
-
-let Footer = props => (
-    <div className="footer vertically_center">
-        <span className="footer__link text_uppercase">
-            <a href="mailto:robertu0717@gmail.com" target="_blank">EMAIL</a>
-        </span>
-        <span className="footer__link text_uppercase">
-            <a href="https://github.com/RoberMac" target="_blank">GitHub</a>
-        </span>
-        <span className="footer__link text_uppercase">
-            <ToggleText text={ ['Wechat', 'RoberMac'] }/>
-        </span>
-    </div>
-);
+let Work = props => {
+    return (
+        <div className="work" id={props.workId}>
+            <WorkBanner
+                workId={props.workId}
+                onToggleActive={props.onToggleActive}
+                {...props.info}
+                {...props.active}
+            />
+            <ReactCSSTransitionGroup
+                transitionName="react"
+                transitionEnterTimeout={700}
+                transitionLeaveTimeout={700}
+            >
+                {props.active.isDemoActive && 
+                    <WorkDemo
+                        key={'WorkDemo'}
+                        workId={props.workId}
+                        screenshots={props.screenshots}
+                        zoomIn={props.onDemoZoom}
+                    />
+                }
+                {props.active.demoZoomSrc &&
+                    <WorkDemoZoom
+                        key={'WorkDemoZoom'}
+                        zoomOut={props.onDemoZoom}
+                        {...props.active}
+                    />
+                }
+            </ReactCSSTransitionGroup>
+        </div>
+    )
+};
 
 
 export let Works = props => {
-    let works = worksData.map(work => {
+
+    let works = Object.keys(props.works).map( (workId, index) => {
+        const work = props.works[workId];
+
         return (
-            <div className="work" key={work.info.screen_name} id={work.info.screen_name}>
-                <Work workData={work}/>
-            </div>
+            <Work
+                key={index}
+                workId={workId}
+                onToggleActive={ () => props.onToggleActive(workId, work.active.isBannerActive, work.active.isDemoActive) }
+                onDemoZoom={ (src, description) => props.onDemoZoom(workId, src, description) }
+                {...work}
+            />
         );
     });
 
     return (
         <div>
             {works}
-            <Footer />
         </div>
     );
 };

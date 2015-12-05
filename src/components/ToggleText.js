@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 
-export class ToggleText extends React.Component {
+export default class ToggleText extends React.Component {
     constructor (props){
         super(props)
         this.state = { currentText: props.text[0] }
@@ -25,7 +25,4 @@ export class ToggleText extends React.Component {
 
         this.setState({ currentText: nextText })
     }
-}
-ToggleText.propTypes = {
-    text : React.PropTypes.arrayOf(React.PropTypes.string)
 }

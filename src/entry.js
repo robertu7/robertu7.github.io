@@ -1,8 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 
-import { Works } from './components/Works';
-import './css/main.css';
+import configureStore from './store'
+import App from './containers/App'
+import './css/main.css'
 
+const store = configureStore()
 
-ReactDOM.render(<Works />, document.querySelector('.app'));
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.querySelector('.app')
+);
