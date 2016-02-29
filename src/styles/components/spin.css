@@ -1,0 +1,28 @@
+.spin {
+    position: absolute calc(50% - 20px) calc(50% - 20px) * *;
+    size: 40px;
+    margin: 0 auto;
+    border: 1px solid #FFF;
+    border-radius: 20px;
+    transition: all 7.7s ease-in-out;
+    animation: spinnerLoading 1.7s infinite linear;
+
+    &:before {
+        content: '';
+        position: absolute 0 * * 0;
+        size: 10px;
+        border-radius: 5px;
+        transition: all 7.7s ease-in-out;
+        background-color: var(--color-gray);
+    }
+
+    &--done {
+        display: none;
+    }
+    &--error {
+        border-color: var(--color-weibo);
+        &:before {
+            top: -999px;
+        }
+    }
+}

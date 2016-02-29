@@ -9,7 +9,7 @@ const svgmin   = require('gulp-svgmin');
 const svgstore = require('gulp-svgstore');
 
 gulp.task('svgstore', () => {
-    return gulp.src('src/img/svg/*.svg')
+    return gulp.src('src/images/svg/*.svg')
     .pipe(svgmin(file => {
         let prefix = path.basename(file.relative, path.extname(file.relative));
         return {
@@ -23,7 +23,7 @@ gulp.task('svgstore', () => {
     }))
     .pipe(svgstore())
     .pipe(rename('icon-sprites.svg'))
-    .pipe(gulp.dest('src/img'))
+    .pipe(gulp.dest('src/images'))
 })
 
 // Thumbnail
@@ -31,10 +31,10 @@ const imageResize = require('gulp-image-resize');
 const imagemin = require('gulp-imagemin');
 
 gulp.task('thumbnail', () => {
-  gulp.src('src/img/screenshots/large/*.{jpg,png}')
-    .pipe(imageResize({ height: 512 }))
+  gulp.src('src/images/screenshots/large/*.{jpg,png}')
+    .pipe(imageResize({ height: 384 }))
     .pipe(imagemin({ progressive: true }))
-    .pipe(gulp.dest('src/img/screenshots/thumb'));
+    .pipe(gulp.dest('src/images/screenshots/thumb'));
 })
 
 

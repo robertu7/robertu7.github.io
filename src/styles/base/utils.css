@@ -1,0 +1,30 @@
+.vertically_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.overflow {
+    &--x {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        transform: translate3d(0, 0, 0) scaleX(1);
+    }
+    &--y {
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        transform: translate3d(0, 0, 0) scaleX(1);
+    }
+}
+.text_uppercase {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.tips {
+    opacity: .7;
+
+    &:hover {
+        opacity: 1;
+    };
+}
