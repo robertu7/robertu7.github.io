@@ -8,7 +8,17 @@ const ENTRY_PATH = path.resolve(SRC_PATH, 'entry');
 
 module.exports = {
     entry: {
-        app: [path.resolve(ENTRY_PATH, 'app')]
+        app: [path.resolve(ENTRY_PATH, 'app')],
+        vendor: [
+            'classlist',
+            'classnames',
+            'jump.js',
+            'lodash.debounce',
+            'react',
+            'react-addons-css-transition-group',
+            'react-dom',
+            'react-router'
+        ]
     },
     output: {
         path: BUILD_PATH,
@@ -46,10 +56,7 @@ module.exports = {
             __DEV__: process.env.NODE_ENV === 'development' || false,
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'common',
-            filename: 'common.js'
-        }),
+        new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
         new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
     ],
     postcss: function (webpack){
@@ -60,6 +67,7 @@ module.exports = {
             }),
             require('postcss-nested'),
             require('postcss-short'),
+            require('postcss-assets')({ loadPaths: ['src/images/assets'] }),
             require('postcss-cssnext')({
                 autoprefixer: true
             }),

@@ -22,6 +22,8 @@ export default class Banner extends React.Component {
         this.state = { btnActive: false, descriptionActive: false }
     }
     componentWillReceiveProps(nextProps) {
+        if (this.props.active === nextProps.active) return;
+
         if (nextProps.active) {
             this.setState({ btnActive: true })
             setTimeout(() => this.setState({ descriptionActive: true }), 700)

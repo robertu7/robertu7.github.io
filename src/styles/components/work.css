@@ -79,7 +79,6 @@
             }
         }
     }
-
     &__demo {
         position: absolute * * 7px *;
         size: 100% 37%;
@@ -103,7 +102,6 @@
             img, video {
                 max-height: 97%;
                 max-width: 97%;
-                cursor: zoom-out;
             }
 
             &__description {
@@ -115,37 +113,6 @@
                 background-color: var(--color-gray-drak);
                 border-radius: 3px;
             }
-            &__arrow {
-                position: absolute calc(50% - 25px) * *;
-                size: 50px;
-
-                &--left {
-                    left: 25px;
-                }
-                &--right {
-                    right: 25px;
-                }
-            }
         }
     }
-}
-
-.footer {
-    position: relative;
-    size: 100% 23vh;
-    background-color: var(--color-gray);
-
-    &__link {
-        display: inline-block;
-        margin: 0 7px;
-        font-size: var(--font-size-base);
-        font-weight: var(--font-weight-regular);
-        border-bottom: 1px solid #000;
-        user-select: none;
-    }
-}
-
-.media {
-    position: absolute 0 0 * *;
-    size: 100%;
 }

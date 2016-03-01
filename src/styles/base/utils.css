@@ -21,10 +21,26 @@
     letter-spacing: 2px;
     text-transform: uppercase;
 }
-.tips {
-    opacity: .7;
-
-    &:hover {
-        opacity: 1;
-    };
+.cursor {
+    &--pointer {
+        cursor: pointer;
+    }
+    &--pre {
+        cursor: inline('caret--pre.gif'), w-resize;
+        cursor: -webkit-image-set(
+            inline('caret--pre@2x.gif') 2x
+        ), w-resize;
+    }
+    &--next {
+        cursor: inline('caret--next.gif'), e-resize;
+        cursor: -webkit-image-set(
+            inline('caret--next@2x.gif') 2x
+        ), e-resize;
+    }
+    &--zoomIn {
+        cursor: zoom-in;
+    }
+    &--zoomOut {
+        cursor: zoom-out;
+    }
 }
