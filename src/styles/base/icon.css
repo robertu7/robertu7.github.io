@@ -1,0 +1,38 @@
+.icon {
+    &--active {
+        filter: grayscale(0);
+        opacity: 1;
+    }
+    &--inactive {
+        filter: grayscale(100%);
+        opacity: .3;
+    }
+    &--Oneline {
+        svg {
+            fill: var(--color-black);
+        }
+        &:hover svg {
+            transform: scaleY(1.5);
+        }
+    }
+    &--ShinyaApp-News {
+        svg {
+            border: 1px solid #000;
+            border-radius: 7px;
+            background-color: transparent;
+        }
+        &:hover svg {
+            background-color: #000;
+        }
+    }
+    &--PodPicker {
+        &:hover svg {
+            animation: podpicker 0.7s infinite alternate linear;
+        }
+    }
+    &--Doradidae {
+        &:hover svg {
+            animation: doradidae 0.2s ease infinite alternate;
+        }
+    }
+}

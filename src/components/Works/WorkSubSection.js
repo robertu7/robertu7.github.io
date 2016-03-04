@@ -3,38 +3,25 @@ import classNames from 'classnames';
 
 // Components
 import Transition from 'components/Utils/Transition';
+import SubSection from 'components/Utils/SubSection';
 import Media from './Media';
-const Thumb = ({ name, screenshots, onChange }) => (
-    <div className="work__demo overflow--x animate--general">
-        {screenshots.map((item, index) => (
-            <img
-                key={index}
-                src={`/src/images/screenshots/thumb/${name}_${index}.jpg`}
-                onClick={onChange.bind(this, index)}
-            />
-        ))}
-    </div>
-);
 const Large = props => {
     const { src, description } = props;
     const descriptionClass = classNames({
-        'work__demo--zoom__description': true,
+        'section__fullwidth__description': true,
         'text_uppercase': src.indexOf('PodPicker') >= 0
     });
     return (
-        <div className="work__demo--zoom animate--general">
+        <div className="section__fullwidth animate--general">
             <Media type="image" {...props} />
             <span className={descriptionClass}>{description}</span>
         </div>
     );
 };
-
-
-// Export
-export default class Demo extends React.Component {
+class WorkSubSection extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { demoActive: false, largeSrc: '', largeIndex: 0, largeDescription: '' }
+        this.state = { largeSrc: '', largeIndex: 0, largeDescription: '' }
         this.handleLargeSrcChange = this.handleLargeSrcChange.bind(this)
         this.handleKeyDown = this.handleKeyDown.bind(this)
     }
@@ -73,34 +60,36 @@ export default class Demo extends React.Component {
     componentWillUnmount() {
         window.removeEventListener('keydown', this.handleKeyDown)
     }
-    componentWillReceiveProps(nextProps) {
-        if (this.props.active === nextProps.active) return;
-
-        nextProps.active
-            ? setTimeout(() => this.setState({ demoActive: true }), 700)
-        : this.setState({ demoActive: false })
-    }
     render() {
-        const { demoActive, largeSrc, largeIndex, largeDescription } = this.state;
+        const { largeSrc, largeIndex, largeDescription } = this.state;
+        const { name, screenshots } = this.props;
         return (
-            <Transition>
-            {demoActive && (
-                <div>
-                    <Thumb onChange={this.handleLargeSrcChange} {...this.props}  />
-                    <Transition>
-                    {largeSrc && (
-                        <Large
-                            count={this.props.screenshots.length}
-                            index={largeIndex}
-                            src={largeSrc}
-                            description={largeDescription}
-                            onChange={this.handleLargeSrcChange}
-                        />
-                    )}
-                    </Transition>
+            <div>
+                <div className="subsection overflow--x animate--general">
+                {screenshots.map((item, index) => (
+                    <img
+                        key={index}
+                        className="subsection__item cursor--zoomIn"
+                        src={`/src/images/screenshots/thumb/${name}_${index}.jpg`}
+                        onClick={this.handleLargeSrcChange.bind(this, index)}
+                    />
+                ))}
                 </div>
-            )}
-            </Transition>
+                <Transition>
+                {largeSrc && (
+                    <Large
+                        count={screenshots.length}
+                        index={largeIndex}
+                        src={largeSrc}
+                        description={largeDescription}
+                        onChange={this.handleLargeSrcChange}
+                    />
+                )}
+                </Transition>
+            </div>
         );
     }
 }
+
+// Export
+export default SubSection(WorkSubSection);

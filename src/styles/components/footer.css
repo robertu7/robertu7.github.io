@@ -4,15 +4,7 @@
     background-color: var(--color-gray);
 
     &__logo {
-        position: absolute calc(50% - 13px) * * calc(50% - 13px);
-        size: 26px;
-    }
-    &__link {
         display: inline-block;
-        margin: 0 7px;
-        font-size: var(--font-size-base);
-        font-weight: var(--font-weight-regular);
-        border-bottom: 1px solid #000;
-        user-select: none;
+        size: 26px;
     }
 }

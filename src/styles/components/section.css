@@ -1,0 +1,31 @@
+.section {
+    position: relative;
+    size: 100% 77vh;
+    margin-bottom: 3px;
+    background-color: var(--color-gray);
+
+    &__fullwidth {
+        position: absolute 0 0 * *;
+        size: 100%;
+        background-color: var(--color-black-alpha);
+
+        img, video {
+            max-height: 97%;
+            max-width: 97%;
+        }
+
+        &__media {
+            position: absolute 0 0 * *;
+            size: 100%;
+        }
+        &__description {
+            position: absolute * 7px 1.5% *;
+            padding: 3px;
+            font-size: var(--font-size-small);
+            font-weight: var(--font-weight-lighter);
+            color: var(--color-black);
+            background-color: var(--color-gray-drak);
+            border-radius: 3px;
+        }
+    }
+}

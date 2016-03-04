@@ -18,7 +18,7 @@
     }
 }
 .text_uppercase {
-    letter-spacing: 2px;
+    letter-spacing: 0.17em;
     text-transform: uppercase;
 }
 .cursor {

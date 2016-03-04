@@ -1,0 +1,56 @@
+.subsection {
+    position: absolute * * 7px *;
+    size: 100% 37%;
+    white-space: nowrap;
+
+    &__item {
+        position: relative;
+        display: inline-block;
+        height: 100%;
+        margin-right: 7px;
+        border-bottom: 2px solid var(--color-gray-drak);
+        &:first-child {
+            margin-left: 7px;
+        }
+
+        &__sub {
+            position: absolute * 7px 7px *;
+            font-size: var(--font-size-small);
+            font-weight: var(--font-weight-lighter);
+            color: var(--color-black);
+        }
+        &__middle {
+            position: absolute 0 0 * *;
+            size: 100%;
+            font-size: var(--font-size-regular);
+            font-weight: var(--font-weight-light);
+        }
+        &__super {
+            position: absolute 7px * * 7px;
+            width: 17%;
+            max-width: 30px;
+        }
+
+        &--inactive {
+            border-bottom-color: transparent;
+        }
+    }
+
+    &--about {
+        height: 70px;
+
+        .subsection {
+            &__item {
+                width: 23vw;
+                background-color: var(--color-white);
+
+                @media (--all-mobile-devices) {
+                    width: 33.3vw;
+                }
+                @media (--phone){
+                    width: 50vw;
+                }
+            }
+        }
+    }
+}

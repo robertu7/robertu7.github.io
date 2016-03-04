@@ -5,8 +5,10 @@
 @import "base/reset";
 @import "base/utils";
 @import "base/animation";
+@import "base/icon";
 
-@import "components/spin";
-@import "components/work";
+@import "components/section";
+@import "components/subsection";
+@import "components/banner";
 @import "components/footer";
-@import "components/media";
+@import "components/spin";

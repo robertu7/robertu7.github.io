@@ -1,0 +1,57 @@
+.banner {
+    position: absolute 0 0 * *;
+    size: 100%;
+    text-align: center;
+    overflow: hidden;
+
+    &__heading {
+        font-weight: var(--font-weight-lighter);
+    }
+    &__map {
+        &__area {
+            size: 30px;
+        }
+    }
+    &__logo {
+        svg {
+            height: 10vh;
+        }
+    }
+    &__description {
+        position: absolute calc(31.5vh) * * 0;
+        width: 100%;
+        font-size: var(--font-size-base);
+        font-weight: var(--font-weight-lighter);
+    }
+    &__link-btn {
+        display: inline-block;
+        size: 17px 7px;
+        margin: 17px 3px;
+        padding: 3px;
+        border-radius: 3px;
+        filter: grayscale(100%);
+
+        &--red {
+            background-color: #E9392C;
+        }
+        &--blue {
+            background-color: #3D57C7;
+        }
+
+        &:hover {
+            filter: grayscale(0%);
+        }
+        @media (--all-mobile-devices) {
+            filter: grayscale(0%);
+        }
+    }
+
+    &--active {
+        height: calc(63% - 7px);
+    }
+    &--about {
+        &.banner--active {
+            height: calc(100% - 77px);
+        }
+    }
+}

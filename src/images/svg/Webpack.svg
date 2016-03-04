@@ -1,0 +1,14 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient fx="50%" fy="50%" id="a">
+      <stop stop-color="#93B4E7" offset="0%"/>
+      <stop stop-color="#B9D1F8" offset="59.273%"/>
+      <stop stop-color="#9CB6E0" offset="100%"/>
+    </radialGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <path d="M75.02.266L.174 43.31v86.086L75.02 172.44l74.844-43.044V43.31L75.02.265z" fill="url(#a)" transform="translate(25 14)"/>
+    <path d="M100.02 57.928L62.904 79.273v42.69l37.116 21.346 37.116-21.346v-42.69L100.02 57.927z" fill="#6F95DB"/>
+    <path d="M100 14L25 57.336l75 40.677 75-40.41L100 14zM100 103.597L25 143.21l75 43.07 74.733-43.335L100 103.597z" fill-opacity=".1" fill="#FFF"/>
+  </g>
+</svg>

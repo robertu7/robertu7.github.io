@@ -104,7 +104,7 @@ export default class Media extends React.Component {
             display: error ? 'none' : 'initial'
         };
         return (
-            <div className="media vertically_center" onClick={this.handleClick} ref="media">
+            <div className="section__fullwidth__media vertically_center" onClick={this.handleClick} ref="media">
                 <div className={spinClass}></div>
                 {type === 'image'
                     ? <img 
