@@ -47,12 +47,12 @@ export default SectionComponent => AutoURL(
     class extends React.Component {
         constructor(props) {
             super(props)
-            this.state = { active: false };
+            this.state = { sectionActive: false };
             this.handleActiveChange = this.handleActiveChange.bind(this);
             this.handleClick = this.handleClick.bind(this);
         }
         handleActiveChange() {
-            this.setState({ active: !this.state.active })
+            this.setState({ sectionActive: !this.state.sectionActive })
         }
         handleClick() {
             const { visible, updateURL } = this.props;
@@ -60,7 +60,7 @@ export default SectionComponent => AutoURL(
         }
         shouldComponentUpdate(nextProps, nextState) {
             const shouldUpdate = (
-                this.state.active !== nextState.active 
+                this.state.sectionActive !== nextState.sectionActive 
                 || this.props.visible !== nextProps.visible
             );
             __DEV__ && shouldUpdate && console.log(`[update: Section] ${this.props.sectionName}`)

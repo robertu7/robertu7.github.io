@@ -6,5 +6,12 @@
     &__logo {
         display: inline-block;
         size: 26px;
+
+        &--back {
+            transform: rotate(-90deg);
+        }
+        &--forward {
+            transform: rotate(90deg);
+        }
     }
 }

@@ -1,0 +1,47 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient x1="50.006%" y1=".044%" x2="50.006%" y2="100.026%" id="a">
+      <stop stop-color="#81B4E0" offset="0%"/>
+      <stop stop-color="#0C5A94" offset="100%"/>
+    </linearGradient>
+    <linearGradient x1="50%" y1=".138%" x2="50%" y2="71.693%" id="b">
+      <stop stop-color="#F06B59" offset="0%"/>
+      <stop stop-color="#DF2227" offset="100%"/>
+    </linearGradient>
+    <linearGradient x1="18.17%" y1="81.96%" x2="48.84%" y2="38.283%" id="c">
+      <stop stop-color="#388B41" offset="0%"/>
+      <stop stop-color="#4CB749" offset="100%"/>
+    </linearGradient>
+    <linearGradient x1="65.067%" y1="85.352%" x2="24.384%" y2="12.208%" id="d">
+      <stop stop-color="#E4B022" offset="0%"/>
+      <stop stop-color="#FCD209" offset="30%"/>
+    </linearGradient>
+    <linearGradient x1="49.998%" y1="96.297%" x2="49.998%" y2="-2.467%" id="e">
+      <stop stop-opacity=".15" offset="0%"/>
+      <stop stop-opacity=".06" offset="30%"/>
+      <stop stop-opacity=".03" offset="100%"/>
+    </linearGradient>
+    <linearGradient x1="105.962%" y1="8.541%" x2="-6.279%" y2="78.541%" id="f">
+      <stop stop-opacity=".15" offset="0%"/>
+      <stop stop-opacity=".06" offset="30%"/>
+      <stop stop-opacity=".03" offset="100%"/>
+    </linearGradient>
+    <linearGradient x1="39.929%" y1="547.063%" x2="47.695%" y2="131.312%" id="g">
+      <stop stop-opacity=".15" offset="0%"/>
+      <stop stop-opacity=".06" offset="30%"/>
+      <stop stop-opacity=".03" offset="100%"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(15 15)" fill="none" fill-rule="evenodd">
+    <circle fill="#FFF" cx="84.815" cy="84.963" r="83.315"/>
+    <path d="M137.833 100.11c0-29.28-23.737-53.018-53.018-53.018-29.28 0-53.02 23.737-53.02 53.02h15.15c0-20.917 16.954-37.872 37.87-37.872 20.914 0 37.87 16.955 37.87 37.87" fill-opacity=".1" fill="#000"/>
+    <circle fill-opacity=".1" fill="#000" cx="88.602" cy="95.567" r="28.782"/>
+    <ellipse fill="url(#a)" cx="84.815" cy="84.962" rx="31.053" ry="31.053"/>
+    <path d="M160.556 47.092C139.703 5.14 88.79-11.968 46.836 8.884c-13.082 6.502-24.263 16.27-32.46 28.363L48.46 96.324c-6.277-19.95 4.81-41.213 24.76-47.49 3.508-1.103 7.16-1.69 10.838-1.74" fill="url(#b)"/>
+    <path d="M14.377 37.247c-26.088 38.915-15.69 91.61 23.226 117.697 12.04 8.07 25.947 12.923 40.395 14.092l35.6-60.592c-13.312 16.133-37.18 18.42-53.312 5.11-5.48-4.52-9.578-10.49-11.826-17.23" fill="url(#c)"/>
+    <path d="M77.998 169.036c46.717 3.53 87.45-31.477 90.983-78.193 1.14-15.074-1.767-30.177-8.425-43.75H84.058c20.914.096 37.79 17.13 37.695 38.044-.04 8.46-2.91 16.668-8.157 23.307" fill="url(#d)"/>
+    <path d="M14.377 37.247L48.46 96.324c-2.525-8.497-1.988-17.61 1.514-25.752L15.89 34.974" fill="url(#e)"/>
+    <path d="M77.998 169.036l35.6-60.592c-5.618 6.698-13.378 11.246-21.966 12.875l-15.15 47.716" fill="url(#f)"/>
+    <path d="M160.556 47.092H84.058c11.522.054 22.394 5.35 29.538 14.39l48.474-12.117" fill="url(#g)"/>
+  </g>
+</svg>

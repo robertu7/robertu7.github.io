@@ -7,9 +7,9 @@ export default BannerComponent => class extends React.Component {
         this.state = { outerActive: false, innerActive: false }
     }
     componentWillReceiveProps(nextProps) {
-        if (this.props.active === nextProps.active) return;
+        if (this.props.sectionActive === nextProps.sectionActive) return;
 
-        if (nextProps.active) {
+        if (nextProps.sectionActive) {
             this.setState({ outerActive: true })
             setTimeout(() => this.setState({ innerActive: true }), 700)
         } else {

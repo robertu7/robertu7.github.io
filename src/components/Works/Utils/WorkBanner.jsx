@@ -20,17 +20,17 @@ const WorkBanner = ({ outerActive, innerActive, name, description, website, repo
     });
     return (
         <div className={bannerClass}>
-            <button className={btnClass} onClick={onSectionChange} type="button">
+            <button className={btnClass} onClick={onSectionChange} type="button" title={name}>
                 <Icon name={name} className="animate--general" />
             </button>
             <Transition>
             {innerActive && (
                 <div className="banner__description animate--general">
                     <p>{description}</p>
-                    <a href={website} target="_blank">
+                    <a href={website} target="_blank" title={website}>
                         <span className={linkBtnClass('red')}></span>
                     </a>
-                    <a href={repository} target="_blank">
+                    <a href={repository} target="_blank" title={repository}>
                         <span className={linkBtnClass('blue')}></span>
                     </a>
                 </div>

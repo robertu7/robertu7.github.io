@@ -72,6 +72,7 @@ class WorkSubSection extends React.Component {
                         className="subsection__item cursor--zoomIn"
                         src={`/src/images/screenshots/thumb/${name}_${index}.jpg`}
                         onClick={this.handleLargeSrcChange.bind(this, index)}
+                        title={screenshots[index]}
                     />
                 ))}
                 </div>

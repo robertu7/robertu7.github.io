@@ -44,7 +44,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['', '.js', '.json', '.coffee'],
+        extensions: ['', '.js', '.jsx', '.json', '.coffee'],
         alias: {
             'components': path.resolve(SRC_PATH, 'components'),
             'routes': path.resolve(SRC_PATH, 'routes'),

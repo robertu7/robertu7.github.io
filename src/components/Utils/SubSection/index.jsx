@@ -9,9 +9,9 @@ export default SubSectionComponent => class extends React.Component {
         this.state = { subsectionActive: false }
     }
     componentWillReceiveProps(nextProps) {
-        if (this.props.active === nextProps.active) return;
+        if (this.props.sectionActive === nextProps.sectionActive) return;
 
-        nextProps.active
+        nextProps.sectionActive
             ? setTimeout(() => this.setState({ subsectionActive: true }), 700)
         : this.setState({ subsectionActive: false })
     }

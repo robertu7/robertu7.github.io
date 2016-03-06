@@ -11,8 +11,15 @@ export default class App extends React.Component {
     componentDidMount() {
         this.unlisten = hashHistory.listen(location => {
             const sectionName = location.query.name;
+            const target = `.section--${sectionName}`;
 
-            sectionName && new Jump().jump(`.section--${sectionName}`, { duration: 700 })
+            if (!sectionName) return;
+
+            if (document.querySelector(target)) {
+                new Jump().jump(target, { duration: 700 })
+            } else {
+                setTimeout(() => new Jump().jump(target, { duration: 700 }))
+            }
         })
     }
     componentWillUnmount() {

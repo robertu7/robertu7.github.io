@@ -1,0 +1,31 @@
+.graph {
+    &__icon {
+        position: absolute 0 * * 0;
+        transition: transform 60s linear, filter .7s linear, opacity .7s linear;
+
+        &--x-small {
+            size: 2vw;
+            @media (--all-mobile-devices) {
+                size: 3vw;
+            }
+        }
+        &--small {
+            size: 4vw;
+            @media (--all-mobile-devices) {
+                size: 7vw;
+            }
+        }
+        &--middle {
+            size: 7vw;
+            @media (--all-mobile-devices) {
+                size: 10vw;
+            }
+        }
+        &--large {
+            size: 13vw;
+            @media (--all-mobile-devices) {
+                size: 17vw;
+            }
+        }
+    }
+}

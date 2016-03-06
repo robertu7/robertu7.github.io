@@ -2,16 +2,7 @@ import React from 'react';
 import { Router, Route, IndexRoute, Redirect } from 'react-router';
 
 // Helpers
-const redirectIfNot = {
-    Works: (nextState, replaceState) => {
-        if (nextState.location.pathname === '/'){
-            replaceState({
-                pathname: '/works',
-                query: { name: 'Oneline' }
-            })
-        }
-    }
-};
+import redirectIfNot from './redirectIfNot';
 
 // Components
 import App from 'components/App';
@@ -24,8 +15,8 @@ export default (
 
         <IndexRoute onEnter={redirectIfNot.Works} />
 
-        <Route path="works" component={Works} />
-        <Route path="about" component={About} />
+        <Route path="works" component={Works} onEnter={redirectIfNot.ValidWork} />
+        <Route path="about" component={About} onEnter={redirectIfNot.ValidAbout} />
 
         <Redirect from="*" to="works" />
 

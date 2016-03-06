@@ -3,26 +3,27 @@ import assign from 'object.assign';
 import classNames from 'classnames';
 
 // Helper
-import randomStyle from './randomStyle';
+import randomPosition from './randomPosition';
 
 // Components
 import Icon from 'components/Utils/Icon';
 
 // Export
-export default class index extends React.Component {
+export default class extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { styles: props.nodes.map(node => randomStyle[node.area]()) }
+
+        const { nodes, HEIGHT } = props;
+        this.state = { styles: nodes.map(node => randomPosition({ area: node.area, HEIGHT })) }
         this.updatePosition = this.updatePosition.bind(this)
     }
     updatePosition() {
-        const { nodes } = this.props;
-
-        this.setState({ styles: nodes.map(node => randomStyle[node.area]()) })
+        const { nodes, HEIGHT } = this.props;
+        this.setState({ styles: nodes.map(node => randomPosition({ area: node.area, HEIGHT })) })
     }
     componentDidMount() {
         setTimeout(this.updatePosition)
-        this.updatePositionInterval = setInterval(this.updatePosition, 7000)
+        this.updatePositionInterval = setInterval(this.updatePosition, 60 * 1000)
     }
     componentWillUnmount() {
         clearInterval(this.updatePositionInterval)
@@ -32,16 +33,17 @@ export default class index extends React.Component {
         const { styles } = this.state;
         return (
             <div>
-            {nodes.map((node, index) => {
+            {nodes.map(({ displayName, name, link, area, size,  active }, index) => {
                 const iconClass = classNames({
-                    'animate--general': true,
-                    'icon--active': node.active,
-                    'icon--inactive': !node.active
+                    'graph__icon animate--general': true,
+                    [`graph__icon--${size}`]: true,
+                    'icon--active': active,
+                    'icon--inactive': !active
                 });
                 return (
-                    <a key={node.name} href={node.link} target="_blank">
+                    <a key={name} href={link} target="_blank" title={displayName || name}>
                         <span className={iconClass} style={styles[index]} role="button">
-                            <Icon name={node.name} />
+                            <Icon name={name} />
                         </span>
                     </a>
                 );
