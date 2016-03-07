@@ -8,10 +8,10 @@ import Section from 'components/Utils/Section';
 import WorkBanner from './Utils/WorkBanner';
 import WorkSubSection from './Utils/WorkSubSection';
 const Work = Section(
-    ({ sectionActive, info, screenshots, onSectionChange }) => (
+    props => (
         <div>
-            <WorkBanner sectionActive={sectionActive} onSectionChange={onSectionChange} {...info} />
-            <WorkSubSection sectionActive={sectionActive} name={info.name} screenshots={screenshots} />
+            <WorkBanner {...props.info} {...props} />
+            <WorkSubSection {...props.info} {...props} />
         </div>
     )
 );

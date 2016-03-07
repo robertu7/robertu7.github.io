@@ -27,5 +27,10 @@
             background-color: var(--color-gray-drak);
             border-radius: 3px;
         }
+        &__btn {
+            position: absolute * * 1.5% 7px;
+            size: 30px;
+            z-index: 2;
+        }
     }
 }

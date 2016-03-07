@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import ClassList from 'classlist';
+import assign from 'object.assign';
 
 export default class Media extends React.Component {
     constructor (props){
@@ -85,7 +86,7 @@ export default class Media extends React.Component {
         elem.removeEventListener('mousemove', this.handleCursorChange)
     }
     componentWillReceiveProps(nextProps) {
-        if (this.props.src !== nextProps.src) {
+        if (this.props.src !== nextProps.src || this.props.type !== nextProps.type) {
             this.setState({ done: false, error: false })
             return true;
         } else {
@@ -94,7 +95,7 @@ export default class Media extends React.Component {
     }
     render() {
         const { done, error } = this.state;
-        const { type, src } = this.props;
+        const { type, src, vid } = this.props;
         const spinClass = classNames({
             'spin': true,
             'spin--done': done,
@@ -102,6 +103,10 @@ export default class Media extends React.Component {
         });
         const mediaStyle = {
             display: error ? 'none' : 'initial'
+        };
+        const videoStyle = {
+            width: '70%',
+            height: '70%'
         };
         return (
             <div className="section__fullwidth__media vertically_center" onClick={this.handleClick} ref="media">
@@ -113,11 +118,15 @@ export default class Media extends React.Component {
                         onError={this.handleLoadError}
                         src={src}
                     />
-                    : <video 
-                        style={mediaStyle}
+                    : <iframe
+                        src={`https://player.vimeo.com/video/${vid}`}
+                        style={assign({}, mediaStyle, videoStyle)}
                         onLoad={this.handleLoadDone}
                         onError={this.handleLoadError}
-                        src={src}
+                        frameBorder="0"
+                        webkitallowfullscreen
+                        mozallowfullscreen
+                        allowFullScreen
                     />
                 }
             </div>
