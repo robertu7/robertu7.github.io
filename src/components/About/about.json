@@ -100,6 +100,7 @@
             { "name": "Babel", "link": "https://babeljs.io", "area": "A", "size": "small" },
             { "name": "CloudFlare", "link": "https://www.cloudflare.com", "area": "A", "size": "x-small" },
             { "name": "DigitalOcean", "link": "https://www.digitalocean.com", "area": "A", "size": "x-small" },
+            { "name": "Comodo", "link": "https://www.comodo.com", "area": "A", "size": "small" },
             { "name": "GitHub", "link": "https://github.com", "area": "A", "size": "x-small" },
             { "name": "Gulp", "link": "http://gulpjs.com", "area": "A", "size": "small" },
             { "name": "JWT", "link": "http://jwt.io", "area": "A", "size": "small" },
@@ -170,17 +171,19 @@
             }
         ],
         "_nodes": [
-            { "displayName": "MacBook Pro", "name": "MacBookPro", "link": "https://www.apple.com/macbook-pro", "area": "B", "size": "x-small" },
-            { "name": "Email", "link": "mailto:robertu0717@gmail.com", "area": "ABC", "size": "small" },
             { "name": "GitHub", "link": "https://github.com/RoberMac", "area": "ABC", "size": "small" },
             { "name": "Instagram", "link": "https://www.instagram.com/robertwo", "area": "ABC", "size": "middle" },
             { "name": "Twitter", "link": "https://twitter.com/RoberQi", "area": "ABC", "size": "small" },
-
             { "name": "AngularJS", "link": "https://angularjs.org", "area": "B", "size": "middle" },
             { "name": "CSS", "link": "https://developer.mozilla.org/en-US/docs/Web/CSS", "area": "B", "size": "small" },
             { "name": "HTML", "link": "https://developer.mozilla.org/en-US/docs/Web/HTML", "area": "B", "size": "small" },
             { "name": "JavaScript", "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript", "area": "B", "size": "small" },
-            { "name": "React", "link": "https://facebook.github.io/react", "area": "B", "size": "middle" }
+            { "name": "React", "link": "https://facebook.github.io/react", "area": "B", "size": "middle" },
+
+            { "displayName": "MacBook Pro", "name": "MacBookPro", "link": "https://www.apple.com/macbook-pro", "area": "ABC", "size": "x-small" },
+            { "displayName": "Golden State Warriors", "name": "GSW", "link": "http://www.nba.com/warriors", "area": "ABC", "size": "x-small" },
+            { "name": "Apple", "link": "https://www.apple.com", "area": "ABC", "size": "x-small" },
+            { "name": "Email", "link": "mailto:robertu0717@gmail.com", "area": "ABC", "size": "small" }
         ]
     }
 ]
