@@ -133,3 +133,11 @@ export default class Media extends React.Component {
         );
     }
 };
+
+Media.propTypes = {
+    type: React.PropTypes.oneOf(['image', 'video']).isRequired,
+    src: React.PropTypes.string.isRequired,
+    vid: React.PropTypes.string,
+    count: React.PropTypes.number.isRequired,
+    index: React.PropTypes.number.isRequired,
+};

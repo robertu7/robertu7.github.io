@@ -8,7 +8,7 @@ import assign from 'object.assign';
  *           *           *           *
  *************************************
  */
-export default ({ area, HEIGHT = 100, WIDTH = 100 }) => {
+export default ({ area, HEIGHT = 73 * 0.77, WIDTH = 100 }) => {
     const randomHeight = () => (Math.random() * HEIGHT);
     const randomWidth = () => (Math.random() * WIDTH);
 

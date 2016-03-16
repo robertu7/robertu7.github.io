@@ -8,10 +8,7 @@ export default class VisibilitySensor extends React.Component {
         this.state = { isVisible: null }
         this.check = this.check.bind(this)
     }
-    /**
-     * Check if the element is within the visible viewport
-     *
-     */
+    // Check if the element is within the visible viewport
     check() {
         const { partialVisibility, onChange } = this.props;
         const rect = this.refs.sensor.getBoundingClientRect();
@@ -69,3 +66,8 @@ export default class VisibilitySensor extends React.Component {
         );
     }
 }
+
+VisibilitySensor.propTypes = {
+    partialVisibility: React.PropTypes.bool,
+    onChange: React.PropTypes.func.isRequired
+};

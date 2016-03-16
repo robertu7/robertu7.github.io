@@ -18,7 +18,7 @@ export default Banner(
                     <h2 className="banner__heading text_uppercase">{heading}</h2>
                 </span>
                 <Transition>
-                {innerActive && <Graph nodes={nodes.data} HEIGHT={73 * 0.77} />}
+                {innerActive && <Graph nodes={nodes.data} />}
                 </Transition>
             </div>
         );

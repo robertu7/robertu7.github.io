@@ -36,8 +36,7 @@
 
                     "Gulp",
                     "Sass",
-
-                    "JWT",
+                    "PostCSS",
 
                     "Express",
                     "MongoDB",
@@ -168,12 +167,19 @@
                 "nodes": [
                     "Instagram"
                 ]
+            },
+            {
+                "name": "♥️",
+                "nodes": [
+                    "Apple",
+                    "GSW"
+                ]
             }
         ],
         "_nodes": [
             { "name": "GitHub", "link": "https://github.com/RoberMac", "area": "ABC", "size": "small" },
             { "name": "Instagram", "link": "https://www.instagram.com/robertwo", "area": "ABC", "size": "middle" },
-            { "name": "Twitter", "link": "https://twitter.com/RoberQi", "area": "ABC", "size": "small" },
+            { "name": "Twitter", "link": "https://twitter.com/robertumuch", "area": "ABC", "size": "small" },
             { "name": "AngularJS", "link": "https://angularjs.org", "area": "B", "size": "middle" },
             { "name": "CSS", "link": "https://developer.mozilla.org/en-US/docs/Web/CSS", "area": "B", "size": "small" },
             { "name": "HTML", "link": "https://developer.mozilla.org/en-US/docs/Web/HTML", "area": "B", "size": "small" },

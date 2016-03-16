@@ -7,48 +7,56 @@ import randomPosition from './randomPosition';
 
 // Components
 import Icon from 'components/Utils/Icon';
-
-// Export
-export default class extends React.Component {
+class Node extends React.Component {
     constructor(props) {
         super(props)
-
-        const { nodes, HEIGHT } = props;
-        this.state = { styles: nodes.map(node => randomPosition({ area: node.area, HEIGHT })) }
-        this.updatePosition = this.updatePosition.bind(this)
+        this.state = {
+            style: randomPosition({ area: props.area })
+        };
+        this.updatePosition = this.updatePosition.bind(this);
     }
     updatePosition() {
-        const { nodes, HEIGHT } = this.props;
-        this.setState({ styles: nodes.map(node => randomPosition({ area: node.area, HEIGHT })) })
+        this.setState({ style: randomPosition({ area: this.props.area }) })
     }
     componentDidMount() {
+        const randomTime = (Math.random() * 10 + 60) * 1000;
+
         setTimeout(this.updatePosition)
-        this.updatePositionInterval = setInterval(this.updatePosition, 60 * 1000)
+
+        this.updatePositionInterval = setInterval(this.updatePosition, randomTime);
     }
     componentWillUnmount() {
         clearInterval(this.updatePositionInterval)
     }
     render() {
-        const { nodes } = this.props;
-        const { styles } = this.state;
+        const { style } = this.state;
+        const { displayName, name, link, area, size,  active } = this.props;
+        const iconClass = classNames({
+            'graph__icon animate--general': true,
+            [`graph__icon--${size}`]: true,
+            'icon--active': active,
+            'icon--inactive': !active
+        });
         return (
-            <div>
-            {nodes.map(({ displayName, name, link, area, size,  active }, index) => {
-                const iconClass = classNames({
-                    'graph__icon animate--general': true,
-                    [`graph__icon--${size}`]: true,
-                    'icon--active': active,
-                    'icon--inactive': !active
-                });
-                return (
-                    <a key={name} href={link} target="_blank" title={displayName || name}>
-                        <span className={iconClass} style={styles[index]} role="button">
-                            <Icon name={name} />
-                        </span>
-                    </a>
-                );
-            })}
-            </div>
+            <a key={name} href={link} target="_blank" title={displayName || name}>
+                <span className={iconClass} style={style} role="button">
+                    <Icon name={name} />
+                </span>
+            </a>
         );
     }
 }
+const Graph = ({ nodes }) => (
+    <div>
+        {nodes.map((node, index) => (
+            <Node key={node.name} {...node} />
+        ))}
+    </div>
+);
+
+Graph.propTypes = {
+    nodes: React.PropTypes.arrayOf(React.PropTypes.object).isRequired
+};
+
+// Export
+export default Graph;
