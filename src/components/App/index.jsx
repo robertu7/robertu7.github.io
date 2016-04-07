@@ -2,28 +2,29 @@ import React from 'react';
 import Jump from 'jump.js';
 import { hashHistory } from 'react-router';
 
+const jumpToTarget = targetName => {
+    new Jump().jump(document.querySelector(targetName), { duration: 700 });
+};
+
 import Footer from './Footer';
 
 export default class App extends React.Component {
-    constructor(props) {
-        super(props)
-    }
     componentDidMount() {
         this.unlisten = hashHistory.listen(location => {
             const sectionName = location.query.name;
-            const target = `.section--${sectionName}`;
+            const targetName = `.section--${sectionName}`;
 
             if (!sectionName) return;
 
-            if (document.querySelector(target)) {
-                new Jump().jump(target, { duration: 700 })
+            if (document.querySelector(targetName)) {
+                jumpToTarget(targetName);
             } else {
-                setTimeout(() => new Jump().jump(target, { duration: 700 }))
+                setTimeout(() => jumpToTarget(targetName));
             }
-        })
+        });
     }
     componentWillUnmount() {
-        this.unlisten()
+        this.unlisten();
     }
     render() {
         const { location, children } = this.props;

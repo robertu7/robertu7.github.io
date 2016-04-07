@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, IndexRoute, Redirect } from 'react-router';
+import { Route, IndexRoute, Redirect } from 'react-router';
 
 // Helpers
 import redirectIfNot from './redirectIfNot';

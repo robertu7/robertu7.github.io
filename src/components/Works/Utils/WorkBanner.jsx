@@ -5,18 +5,22 @@ import classNames from 'classnames';
 import Icon from 'components/Utils/Icon';
 import Transition from 'components/Utils/Transition';
 import Banner from 'components/Utils/Banner';
-const WorkBanner = ({ outerActive, innerActive, name, description, website, repository, onSectionChange }) => {
+const WorkBanner = ({
+    outerActive, innerActive,
+    name, description, website, repository,
+    onSectionChange,
+}) => {
     const bannerClass = classNames({
         'banner vertically_center animate--general': true,
-        'banner--active': outerActive
+        'banner--active': outerActive,
     });
     const btnClass = classNames({
         'banner__logo animate--general': true,
-        [`icon--${name}`]: true
+        [`icon--${name}`]: true,
     });
     const linkBtnClass = color => classNames({
         'banner__link-btn animate--faster': true,
-        [`banner__link-btn--${color}`]: true
+        [`banner__link-btn--${color}`]: true,
     });
     return (
         <div className={bannerClass}>
@@ -27,18 +31,22 @@ const WorkBanner = ({ outerActive, innerActive, name, description, website, repo
             {innerActive && (
                 <div className="banner__description animate--general">
                     <p>{description}</p>
-                    <a href={website} target="_blank" title={website}>
-                        <span className={linkBtnClass('red')}></span>
-                    </a>
-                    <a href={repository} target="_blank" title={repository}>
-                        <span className={linkBtnClass('blue')}></span>
-                    </a>
+                    {website && (
+                        <a href={website} target="_blank" title={website}>
+                            <span className={linkBtnClass('red')}></span>
+                        </a>
+                    )}
+                    {repository && (
+                        <a href={repository} target="_blank" title={repository}>
+                            <span className={linkBtnClass('blue')}></span>
+                        </a>
+                    )}
                 </div>
             )}
             </Transition>
         </div>
     );
-}
+};
 
 // Export
 export default Banner(WorkBanner);

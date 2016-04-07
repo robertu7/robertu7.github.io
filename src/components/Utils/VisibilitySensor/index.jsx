@@ -4,9 +4,16 @@ import debounce from 'lodash.debounce';
 // https://github.com/joshwnj/react-visibility-sensor
 export default class VisibilitySensor extends React.Component {
     constructor(props) {
-        super(props)
-        this.state = { isVisible: null }
-        this.check = this.check.bind(this)
+        super(props);
+        this.state = { isVisible: null };
+        this.check = this.check.bind(this);
+    }
+    componentDidMount() {
+        this.debounceCheck = debounce(this.check, 300);
+        window.addEventListener('scroll', this.debounceCheck);
+    }
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.debounceCheck);
     }
     // Check if the element is within the visible viewport
     check() {
@@ -16,13 +23,13 @@ export default class VisibilitySensor extends React.Component {
             top: 0,
             left: 0,
             bottom: window.innerHeight || document.documentElement.clientHeight,
-            right: window.innerWidth || document.documentElement.clientWidth
+            right: window.innerWidth || document.documentElement.clientWidth,
         };
         const visibilityRect = {
             top: rect.top >= containmentRect.top,
             left: rect.left >= containmentRect.left,
             bottom: rect.bottom <= containmentRect.bottom,
-            right: rect.right <= containmentRect.right
+            right: rect.right <= containmentRect.right,
         };
 
         let isVisible;
@@ -32,7 +39,7 @@ export default class VisibilitySensor extends React.Component {
                 visibilityRect.left &&
                 visibilityRect.bottom &&
                 visibilityRect.right
-            );            
+            );
         } else {
             const partialVertical =
                 (rect.top >= containmentRect.top && rect.top <= containmentRect.bottom)
@@ -53,13 +60,6 @@ export default class VisibilitySensor extends React.Component {
 
         return this.state;
     }
-    componentDidMount() {
-        this.debounceCheck = debounce(this.check, 300)
-        window.addEventListener('scroll', this.debounceCheck)
-    }
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.debounceCheck)
-    }
     render() {
         return (
             <div ref="sensor">{this.props.children}</div>
@@ -69,5 +69,5 @@ export default class VisibilitySensor extends React.Component {
 
 VisibilitySensor.propTypes = {
     partialVisibility: React.PropTypes.bool,
-    onChange: React.PropTypes.func.isRequired
+    onChange: React.PropTypes.func.isRequired,
 };

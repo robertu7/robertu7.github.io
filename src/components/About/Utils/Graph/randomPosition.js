@@ -1,6 +1,5 @@
-import assign from 'object.assign';
-
-/*************************************
+/**
+ *************************************
  *           *           *           *
  *           *           *           *
  *     A     *     B     *     C     *
@@ -26,6 +25,8 @@ export default ({ area, HEIGHT = 73 * 0.77, WIDTH = 100 }) => {
         case 'ABC':
             x = randomWidth() - 2;
             break;
+        default:
+            break;
     }
 
     let y;
@@ -38,10 +39,12 @@ export default ({ area, HEIGHT = 73 * 0.77, WIDTH = 100 }) => {
         case 'B':
             y = randomHeight() - 6.5;
             break;
+        default:
+            break;
     }
 
     return {
         WebkitTransform: `translate(${x}vw, ${y}vh)`,
-        transform: `translate(${x}vw, ${y}vh)`
+        transform: `translate(${x}vw, ${y}vh)`,
     };
 };

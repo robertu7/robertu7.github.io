@@ -10,7 +10,7 @@ export default Banner(
     ({ outerActive, innerActive, heading, nodes, onSectionChange }) => {
         const bannerClass = classNames({
             'banner banner--about vertically_center animate--general': true,
-            'banner--active': outerActive
+            'banner--active': outerActive,
         });
         return (
             <div className={bannerClass}>

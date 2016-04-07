@@ -31,7 +31,7 @@ export default SubSection(
                             </span>
                             {createdAt && (
                                 <span className="subsection__item__sub">
-                                    {new Date(createdAt).toLocaleDateString()}
+                                    {createdAt}
                                 </span>
                             )}
                         </div>
