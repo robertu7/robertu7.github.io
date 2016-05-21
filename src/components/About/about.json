@@ -9,6 +9,7 @@
                 "createdAt": "2015 - 2016",
                 "nodes": [
                     "React",
+                    "Redux",
                     "ImmutableJS",
                     "Babel",
                     "Gulp",
@@ -26,7 +27,10 @@
                     "PM2",
                     "q",
                     "Request",
-                    "Comodo"
+                    "Comodo",
+                    "Docker",
+                    "CloudFlare",
+                    "DigitalOcean"
                 ]
             },
             {
@@ -48,7 +52,10 @@
                     "PM2",
                     "q",
                     "Request",
-                    "LetsEncrypt"
+                    "LetsEncrypt",
+                    "Vagrant",
+                    "CloudFlare",
+                    "DigitalOcean"
                 ]
             },
             {
@@ -85,7 +92,9 @@
                     "GoogleDevelopers",
                     "OpenWeatherMap",
                     "q",
-                    "Request"
+                    "Request",
+                    "Vagrant",
+                    "CloudFlare"
                 ]
             },
             {
@@ -110,15 +119,17 @@
             { "name": "PostCSS", "link": "http://postcss.org", "area": "A", "size": "small" },
             { "name": "Sass", "link": "http://sass-lang.com", "area": "A", "size": "small" },
             { "name": "Webpack", "link": "https://webpack.github.io/", "area": "A", "size": "small" },
+            { "name": "Docker", "link": "https://docker.com/", "area": "A", "size": "x-small" },
+            { "name": "Vagrant", "link": "https://www.vagrantup.com", "area": "A", "size": "x-small" },
 
+            { "displayName": "Immutable", "name": "ImmutableJS", "link": "http://facebook.github.io/immutable-js", "area": "B", "size": "small" },
             { "displayName": "Sublime Text", "name": "SublimeText", "link": "https://www.sublimetext.com", "area": "B", "size": "x-small" },
             { "name": "AngularJS", "link": "https://angularjs.org", "area": "B", "size": "large" },
-            { "displayName": "Immutable", "name": "ImmutableJS", "link": "http://facebook.github.io/immutable-js", "area": "B", "size": "small" },
             { "name": "Chrome", "link": "https://www.google.com/chrome", "area": "B", "size": "x-small" },
             { "name": "iTerm2", "link": "https://www.iterm2.com", "area": "B", "size": "x-small" },
             { "name": "React", "link": "https://facebook.github.io/react", "area": "B", "size": "large" },
+            { "name": "Redux", "link": "http://redux.js.org/", "area": "B", "size": "x-small" },
             { "name": "SourceTree", "link": "https://www.sourcetreeapp.com", "area": "B", "size": "x-small" },
-            { "name": "Vagrant", "link": "https://www.vagrantup.com", "area": "A", "size": "x-small" },
 
             { "displayName": "Google Developers", "name": "GoogleDevelopers", "link": "https://developers.google.com", "area": "C", "size": "small" },
             { "displayName": "Node.js", "name": "NodeJS", "link": "https://nodejs.org", "area": "C", "size": "small" },
