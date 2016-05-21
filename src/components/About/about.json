@@ -11,15 +11,16 @@
                     "React",
                     "Redux",
                     "ImmutableJS",
+
                     "Babel",
+                    "ESLint",
                     "Gulp",
                     "PostCSS",
                     "Webpack",
 
-                    "JWT",
-
                     "Express",
                     "Jade",
+                    "JWT",
                     "MongoDB",
                     "NGINX",
                     "NodeJS",
@@ -27,10 +28,11 @@
                     "PM2",
                     "q",
                     "Request",
-                    "Comodo",
-                    "Docker",
+
                     "CloudFlare",
-                    "DigitalOcean"
+                    "Comodo",
+                    "DigitalOcean",
+                    "Docker"
                 ]
             },
             {
@@ -40,9 +42,10 @@
                 "nodes": [
                     "AngularJS",
 
+                    "ESLint",
                     "Gulp",
-                    "Sass",
                     "PostCSS",
+                    "Sass",
 
                     "Express",
                     "MongoDB",
@@ -52,10 +55,11 @@
                     "PM2",
                     "q",
                     "Request",
-                    "LetsEncrypt",
-                    "Vagrant",
+
                     "CloudFlare",
-                    "DigitalOcean"
+                    "DigitalOcean",
+                    "LetsEncrypt",
+                    "Vagrant"
                 ]
             },
             {
@@ -65,7 +69,6 @@
                 "nodes": [
                     "AngularJS",
 
-                    "Babel",
                     "Gulp",
                     "Sass"
                 ]
@@ -80,21 +83,21 @@
                     "Gulp",
                     "Sass",
 
-                    "JWT",
-                    "SocketIO",
-
                     "Express",
+                    "Forever",
+                    "GoogleDevelopers",
+                    "JWT",
                     "MongoDB",
                     "NGINX",
                     "NodeJS",
                     "npm",
-                    "Forever",
-                    "GoogleDevelopers",
                     "OpenWeatherMap",
                     "q",
                     "Request",
-                    "Vagrant",
-                    "CloudFlare"
+                    "SocketIO",
+
+                    "CloudFlare",
+                    "Vagrant"
                 ]
             },
             {
@@ -109,16 +112,18 @@
         "_nodes": [
             { "displayName": "Socket.IO", "name": "SocketIO", "link": "http://socket.io", "area": "A", "size": "small" },
             { "name": "Babel", "link": "https://babeljs.io", "area": "A", "size": "small" },
-            { "name": "CloudFlare", "link": "https://www.cloudflare.com", "area": "A", "size": "x-small" },
-            { "name": "DigitalOcean", "link": "https://www.digitalocean.com", "area": "A", "size": "x-small" },
-            { "name": "Comodo", "link": "https://www.comodo.com", "area": "A", "size": "small" },
+            { "name": "ESLint", "link": "http://eslint.org/", "area": "A", "size": "small" },
             { "name": "GitHub", "link": "https://github.com", "area": "A", "size": "x-small" },
             { "name": "Gulp", "link": "http://gulpjs.com", "area": "A", "size": "small" },
             { "name": "JWT", "link": "http://jwt.io", "area": "A", "size": "small" },
-            { "displayName": "Let's Encrypt", "name": "LetsEncrypt", "link": "https://letsencrypt.org", "area": "A", "size": "small" },
             { "name": "PostCSS", "link": "http://postcss.org", "area": "A", "size": "small" },
             { "name": "Sass", "link": "http://sass-lang.com", "area": "A", "size": "small" },
             { "name": "Webpack", "link": "https://webpack.github.io/", "area": "A", "size": "small" },
+
+            { "displayName": "Let's Encrypt", "name": "LetsEncrypt", "link": "https://letsencrypt.org", "area": "A", "size": "small" },
+            { "name": "CloudFlare", "link": "https://www.cloudflare.com", "area": "A", "size": "x-small" },
+            { "name": "Comodo", "link": "https://www.comodo.com", "area": "A", "size": "small" },
+            { "name": "DigitalOcean", "link": "https://www.digitalocean.com", "area": "A", "size": "x-small" },
             { "name": "Docker", "link": "https://docker.com/", "area": "A", "size": "x-small" },
             { "name": "Vagrant", "link": "https://www.vagrantup.com", "area": "A", "size": "x-small" },
 
